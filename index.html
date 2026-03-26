@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luvra | هدايا رقمية رومانسية</title>
+  <meta name="description" content="Luvra - صفحة تعريفية فخمة لمشروع هدايا رقمية رومانسية مع باقات وأسعار ونماذج وتجارب وتواصل مباشر." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #06060b;
+      --bg-2: #0c0814;
+      --panel: rgba(255,255,255,0.06);
+      --panel-2: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.12);
+      --text: #f7f2ff;
+      --muted: #c9bedf;
+      --primary: #9b6bff;
+      --primary-2: #6d28d9;
+      --pink: #ff67b8;
+      --gold: #f0ca82;
+      --success: #7ce2b3;
+      --shadow: 0 12px 42px rgba(0,0,0,0.28);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1220px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(155,107,255,0.16), transparent 26%),
+        radial-gradient(circle at 90% 15%, rgba(255,103,184,0.12), transparent 22%),
+        radial-gradient(circle at 82% 80%, rgba(109,40,217,0.14), transparent 30%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 50%, #08080d 100%);
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img, video { display: block; max-width: 100%; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .glass {
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.06;
+      background-image: radial-gradient(#ffffff 0.7px, transparent 0.7px);
+      background-size: 18px 18px;
+      z-index: 0;
+    }
+
+    .heart {
+      position: fixed;
+      pointer-events: none;
+      opacity: 0.12;
+      z-index: 1;
+      animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(105vh) scale(0.8); opacity: 0; }
+      10% { opacity: 0.14; }
+      to { transform: translateY(-12vh) scale(1.1); opacity: 0; }
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(6,6,11,0.7);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 10px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      font-size: 1.14rem;
+    }
+
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: linear-gradient(135deg, var(--primary), var(--pink));
+      box-shadow: 0 10px 26px rgba(155,107,255,0.34);
+      font-size: 1.2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .nav-links a:hover { color: #fff; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-family: inherit;
+      font-weight: 800;
+      border: 0;
+      cursor: pointer;
+      transition: transform .25s ease, background .25s ease, opacity .25s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--pink));
+      box-shadow: 0 10px 30px rgba(155,107,255,0.34);
+    }
+
+    .btn-secondary {
+      color: #fff;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .btn-ghost {
+      color: #f6eeff;
+      background: transparent;
+      border: 1px dashed rgba(255,255,255,0.22);
+    }
+
+    .hero {
+      padding: 76px 0 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border-radius: 999px;
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #fff;
+      font-size: 0.94rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2.4rem, 5vw, 4.8rem);
+      line-height: 1.1;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 1.1rem;
+      line-height: 2;
+      max-width: 720px;
+    }
+
+    .hero .accent {
+      background: linear-gradient(135deg, #fff, #dcc8ff 40%, #ffa9d8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 26px;
+    }
+
+    .hero-notes {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: .96rem;
+    }
+
+    .hero-notes span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .show-window {
+      border-radius: var(--radius-xl);
+      padding: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mockup {
+      border-radius: 24px;
+      padding: 16px;
+      background: linear-gradient(180deg, rgba(8,8,15,0.94), rgba(13,11,20,0.98));
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .browser-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      color: #f0ebff;
+      font-size: .9rem;
+    }
+
+    .dots { display: flex; gap: 6px; }
+    .dots span {
+      width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,0.28);
+    }
+
+    .screen {
+      min-height: 480px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.12), transparent 20%),
+        radial-gradient(circle at 84% 20%, rgba(255,103,184,0.18), transparent 22%),
+        linear-gradient(180deg, #1a1430, #0d0b14);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .screen::after {
+      content: '';
+      position: absolute;
+      inset: auto -30px -40px auto;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(155,107,255,0.24), transparent 70%);
+      border-radius: 50%;
+    }
+
+    .screen-badge {
+      width: fit-content;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: 800;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .screen-title {
+      margin-top: 20px;
+      font-size: 2rem;
+      line-height: 1.25;
+      font-weight: 900;
+      max-width: 320px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .screen-text {
+      margin-top: 12px;
+      color: #d8cff1;
+      max-width: 340px;
+      line-height: 1.9;
+      position: relative;
+      z-index: 1;
+    }
+
+    .floating-panel {
+      align-self: end;
+      width: 72%;
+      padding: 16px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+      position: relative;
+      z-index: 1;
+    }
+
+    .line {
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      margin-bottom: 10px;
+    }
+
+    .line.short { width: 54%; }
+
+    section { padding: 28px 0 16px; }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .section-head h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      font-weight: 900;
+    }
+
+    .section-head p {
+      margin: 0 auto;
+      max-width: 780px;
+      color: var(--muted);
+      line-height: 1.95;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      padding: 22px;
+      border-radius: 24px;
+    }
+
+    .icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      margin-bottom: 14px;
+      background: linear-gradient(135deg, rgba(155,107,255,0.24), rgba(255,103,184,0.24));
+      font-size: 1.35rem;
+    }
+
+    .card h3 { margin: 0 0 8px; font-size: 1.1rem; }
+    .card p { margin: 0; color: var(--muted); line-height: 1.85; }
+
+    .video-layout {
+      display: grid;
+      grid-template-columns: 1fr 0.95fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .video-box, .small-info {
+      border-radius: 26px;
+      overflow: hidden;
+    }
+
+    .video-placeholder {
+      aspect-ratio: 16/9;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 24px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.28)),
+        radial-gradient(circle at top left, rgba(155,107,255,0.28), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(255,103,184,0.22), transparent 30%),
+        linear-gradient(135deg, #171124, #0d0a14);
+    }
+
+    .play {
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--pink));
+      box-shadow: 0 12px 28px rgba(155,107,255,0.3);
+      margin: 0 auto 18px;
+      font-size: 1.5rem;
+    }
+
+    .video-placeholder h3 { margin: 0 0 10px; font-size: 1.45rem; }
+    .video-placeholder p { margin: 0; color: var(--muted); line-height: 1.9; }
+
+    .check-list {
+      display: grid;
+      gap: 12px;
+      padding: 22px;
+      height: 100%;
+    }
+
+    .check-item {
+      display: flex;
+      gap: 12px;
+      align-items: start;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    .check-item b { color: #fff; display: block; }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+    }
+
+    .step { padding: 24px; border-radius: 24px; }
+
+    .step-num {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--pink));
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .step h3 { margin: 0 0 8px; }
+    .step p { margin: 0; color: var(--muted); line-height: 1.85; }
+
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .price-card {
+      padding: 26px;
+      border-radius: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .price-card.popular {
+      outline: 1.5px solid rgba(240,202,130,0.55);
+      transform: translateY(-6px);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold), #c98f34);
+      color: #1e1405;
+      font-weight: 900;
+      font-size: .84rem;
+    }
+
+    .price-card h3 { margin: 0 0 8px; font-size: 1.35rem; }
+    .price-sub { color: var(--muted); line-height: 1.85; margin-bottom: 16px; }
+    .price {
+      font-size: 2.8rem;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+    .price small { font-size: 1rem; color: var(--muted); font-weight: 700; }
+
+    .price-list {
+      margin: 0 0 22px;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .price-list li {
+      list-style: none;
+      position: relative;
+      padding-right: 26px;
+      line-height: 1.8;
+      color: #f5efff;
+    }
+
+    .price-list li::before {
+      content: '✓';
+      position: absolute;
+      right: 0;
+      color: #c3a0ff;
+      font-weight: 900;
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .demo-card {
+      border-radius: 26px;
+      overflow: hidden;
+    }
+
+    .demo-media {
+      min-height: 220px;
+      display: flex;
+      align-items: end;
+      padding: 18px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.5)),
+        radial-gradient(circle at 20% 20%, rgba(155,107,255,0.4), transparent 28%),
+        radial-gradient(circle at 80% 25%, rgba(255,103,184,0.3), transparent 25%),
+        linear-gradient(135deg, #171124, #0e0b15);
+    }
+
+    .demo-media.two {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.5)),
+        radial-gradient(circle at 25% 18%, rgba(240,202,130,0.32), transparent 26%),
+        radial-gradient(circle at 82% 78%, rgba(155,107,255,0.26), transparent 25%),
+        linear-gradient(135deg, #171112, #0f0a10);
+    }
+
+    .demo-media.three {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.5)),
+        radial-gradient(circle at 65% 18%, rgba(255,103,184,0.28), transparent 26%),
+        radial-gradient(circle at 20% 82%, rgba(155,107,255,0.24), transparent 24%),
+        linear-gradient(135deg, #140e19, #0b0a11);
+    }
+
+    .demo-tag {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 10px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    .demo-title { font-size: 1.42rem; font-weight: 900; }
+
+    .demo-body { padding: 18px; color: var(--muted); line-height: 1.9; }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+    }
+
+    .trust-card, .reviews-card, .faq-card, .contact-card {
+      padding: 24px;
+      border-radius: 28px;
+    }
+
+    .trust-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .trust-item {
+      display: flex;
+      gap: 12px;
+      align-items: start;
+      color: var(--muted);
+      line-height: 1.88;
+    }
+
+    .trust-item strong { display: block; color: #fff; }
+
+    .reviews-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .review {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .review p { margin: 0 0 10px; line-height: 1.9; color: #f5efff; }
+    .review strong { color: var(--muted); font-size: .95rem; }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 18px;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.09);
+      transition: .25s ease;
+    }
+
+    .contact-link:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .contact-link small { color: var(--muted); }
+
+    .faq {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    details {
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.09);
+      padding: 16px 18px;
+    }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+    details p { margin: 12px 0 0; color: var(--muted); line-height: 1.9; }
+
+    .cta {
+      margin: 30px 0 40px;
+      padding: 24px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .cta h3 { margin: 0 0 8px; font-size: 1.7rem; font-weight: 900; }
+    .cta p { margin: 0; color: var(--muted); line-height: 1.9; max-width: 640px; }
+
+    .wa-float {
+      position: fixed;
+      left: 18px;
+      bottom: 18px;
+      z-index: 45;
+      padding: 14px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #1bc67a, #0ea765);
+      color: white;
+      font-weight: 900;
+      box-shadow: 0 14px 34px rgba(13,167,101,.28);
+    }
+
+    .copy-btn {
+      font-size: .95rem;
+    }
+
+    footer {
+      padding: 10px 0 36px;
+      text-align: center;
+      color: #b7abcf;
+      font-size: .95rem;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .video-layout,
+      .trust-grid,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-4 { grid-template-columns: repeat(2,1fr); }
+      .steps { grid-template-columns: 1fr; }
+      .pricing,
+      .demo-grid { grid-template-columns: repeat(2,1fr); }
+    }
+
+    @media (max-width: 760px) {
+      .nav { flex-direction: column; }
+      .nav-links { justify-content: center; }
+      .hero { padding-top: 44px; }
+      .grid-4,
+      .pricing,
+      .demo-grid { grid-template-columns: 1fr; }
+      .hero-actions,
+      .hero-notes { flex-direction: column; align-items: stretch; }
+      .cta { flex-direction: column; align-items: start; }
+      .screen { min-height: 380px; }
+      .floating-panel { width: 100%; }
+      .wa-float { left: 12px; right: 12px; bottom: 12px; justify-content: center; display: flex; }
+    }
+  </style>
+</head>
+<body>
+  <div class="noise"></div>
+  <div id="hearts"></div>
+
+  <div class="nav-wrap">
+    <div class="container nav">
+      <a class="brand" href="#top">
+        <span class="brand-logo">♥</span>
+        <span>Luvra</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">عن المشروع</a>
+        <a href="#video">المعاينة</a>
+        <a href="#packages">الباقات</a>
+        <a href="#demos">النماذج</a>
+        <a href="#reviews">التجارب</a>
+        <a href="#contact">التواصل</a>
+      </div>
+
+      <a class="btn btn-primary" href="#contact">اطلب الآن</a>
+    </div>
+  </div>
+
+  <a class="wa-float" href="https://wa.me/000000000000" target="_blank" rel="noopener noreferrer">راسلني واتساب</a>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="pill">✨ مو مجرد رابط، هذا شعور كامل</div>
+          <h1>هديتك تصير <span class="accent">تجربة فخمة</span><br>بدل رسالة عادية</h1>
+          <p>
+            Luvra مشروع هدايا رقمية مخصص يحول الرسائل والصور والأغاني والذكريات إلى موقع تفاعلي أنيق.
+            صفحة واحدة تبني ثقة، تعرض مشروعك، وتخلي الزبون يفهم الباقات والأسعار والنماذج وأماكن التواصل من أول نظرة.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#demos">شوف النماذج</a>
+            <a class="btn btn-secondary" href="#packages">شوف الباقات</a>
+            <button class="btn btn-ghost copy-btn" onclick="copySiteLink()">نسخ رابط الموقع</button>
+          </div>
+
+          <div class="hero-notes">
+            <span>🛡️ آمن بدون تسجيل دخول</span>
+            <span>💬 تواصل مباشر وواضح</span>
+            <span>💜 مناسب للحب والمناسبات</span>
+          </div>
+        </div>
+
+        <div class="show-window glass">
+          <div class="mockup">
+            <div class="browser-top">
+              <div class="dots"><span></span><span></span><span></span></div>
+              <div>luvra gift preview</div>
+            </div>
+            <div class="screen">
+              <div>
+                <div class="screen-badge">هدية خاصة ♥</div>
+                <div class="screen-title">تجربة تبقى<br>مو مجرد كلام</div>
+                <div class="screen-text">تصميم أنيق، رسالة مرتبة، صور، موسيقى، وصفحة ختامية تخلي الهدية مميزة من أول ثانية.</div>
+              </div>
+              <div class="floating-panel">
+                <div class="line short"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line short"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <h2>شنو يميز المشروع؟</h2>
+          <p>الصفحة هاي مو بس تعريفية، هي واجهة بيع تبني ثقة وتوضح الفكرة بسرعة. خليتها أنيقة، واضحة، ومناسبة لمشروع هدايا رومانسية حتى الناس تحس إنه مشروع حقيقي وفخم من أول دخول.</p>
+        </div>
+
+        <div class="grid-4">
+          <div class="card glass">
+            <div class="icon">💌</div>
+            <h3>رسائل منسقة</h3>
+            <p>تقسيم الكلام إلى سكشنات مرتبة بدل نص طويل، حتى المشاعر توصل بشكل أجمل وأفخم.</p>
+          </div>
+          <div class="card glass">
+            <div class="icon">🖼️</div>
+            <h3>صور وذكريات</h3>
+            <p>إضافة صور أو لحظات خاصة داخل تصميم يبرز التفاصيل بشكل ناعم ومريح للعين.</p>
+          </div>
+          <div class="card glass">
+            <div class="icon">🎵</div>
+            <h3>موسيقى ومود</h3>
+            <p>إمكانية وجود أغنية أو أجواء خاصة تخلي الرابط يحس كأنه تجربة كاملة مو مجرد صفحة.</p>
+          </div>
+          <div class="card glass">
+            <div class="icon">🔒</div>
+            <h3>أفكار مميزة</h3>
+            <p>مثل سؤال سري أو مقدمة أنيقة أو رحلة متعددة الصفحات للطلبات الفخمة والمميزة.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="video">
+      <div class="container">
+        <div class="section-head">
+          <h2>معاينة المشروع</h2>
+          <p>هنا تقدر تحط فيديو استعراض حقيقي لموقع هدية أو تسجيل شاشة. إذا ما عندك هسه، خليه كقسم مؤقت لحين تضيف الفيديو لاحقًا.</p>
+        </div>
+
+        <div class="video-layout">
+          <div class="video-box glass">
+            <div class="video-placeholder">
+              <div>
+                <div class="play">▶</div>
+                <h3>ضع هنا فيديو استعراض</h3>
+                <p>تگدر تستبدل هذا القسم بـ iframe من يوتيوب أو فيديو mp4 أو تسجيل شاشة يوضح شكل الهدية والتجربة.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="small-info glass">
+            <div class="check-list">
+              <div class="check-item"><div>✅</div><div><b>يبني الثقة بسرعة</b>الفيديو يوضح للزائر إن المشروع حقيقي مو رابط غريب.</div></div>
+              <div class="check-item"><div>✅</div><div><b>يسهّل البيع</b>بدل ما تشرح كثير، خله يشوف النتيجة مباشرة.</div></div>
+              <div class="check-item"><div>✅</div><div><b>ينفع للسوشال</b>تگدر تستخدم نفس الاستعراض في تيك توك وإنستغرام.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>شلون يشتغل الطلب؟</h2>
+          <p>خليت الخطوات بسيطة جدًا حتى أي زبون يفهم بسرعة شلون يطلب منك.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step glass">
+            <div class="step-num">1</div>
+            <h3>ترسل التفاصيل</h3>
+            <p>الاسم، الرسالة، الصور، نوع المناسبة، وأي ملاحظات أو إضافات خاصة تريدها داخل الهدية.</p>
+          </div>
+          <div class="step glass">
+            <div class="step-num">2</div>
+            <h3>أجهز الموقع</h3>
+            <p>أرتب المحتوى داخل الباقة المناسبة بتصميم أنيق وواضح حسب فكرة الطلب.</p>
+          </div>
+          <div class="step glass">
+            <div class="step-num">3</div>
+            <h3>تستلم الرابط</h3>
+            <p>رابط جاهز للمشاركة يفتح من المتصفح مباشرة بدون تحميل أو تسجيل دخول.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="packages">
+      <div class="container">
+        <div class="section-head">
+          <h2>الباقات والأسعار</h2>
+          <p>بدّل الأسعار أو المزايا حسب اللي يناسبك. خليتها جاهزة ومرتبة بشكل احترافي حتى تبدي فورًا.</p>
+        </div>
+
+        <div class="pricing">
+          <article class="price-card glass">
+            <h3>Basic</h3>
+            <div class="price-sub">بداية بسيطة وحلوة</div>
+            <div class="price">$3 <small>/ هدية</small></div>
+            <ul class="price-list">
+              <li>صفحة واحدة أنيقة</li>
+              <li>رسالة منسقة</li>
+              <li>صور داخل الهدية</li>
+              <li>رابط خاص للمشاركة</li>
+              <li>تصميم سريع وواضح</li>
+            </ul>
+            <a class="btn btn-secondary" style="width:100%" href="#contact">اختيار هذي الباقة</a>
+          </article>
+
+          <article class="price-card glass popular">
+            <div class="popular-badge">الأكثر طلبًا</div>
+            <h3>Pro</h3>
+            <div class="price-sub">الخيار الأفضل للبيع</div>
+            <div class="price">$5 <small>/ هدية</small></div>
+            <ul class="price-list">
+              <li>عدة سكشنات مرتبة</li>
+              <li>صور + رسالة أطول</li>
+              <li>موسيقى أو أجواء أجمل</li>
+              <li>تصميم أفخم وانتقالات أنعم</li>
+              <li>صفحة ختامية مميزة</li>
+            </ul>
+            <a class="btn btn-primary" style="width:100%" href="#contact">أفضل خيار للطلب</a>
+          </article>
+
+          <article class="price-card glass">
+            <h3>VIP</h3>
+            <div class="price-sub">للهدايا المميزة جدًا</div>
+            <div class="price">$10 <small>/ هدية</small></div>
+            <ul class="price-list">
+              <li>رحلة متعددة الصفحات</li>
+              <li>مقدمة سينمائية</li>
+              <li>سؤال أو قفل سري</li>
+              <li>ترتيب ذكريات بتفاصيل أكثر</li>
+              <li>تجربة أفخم ومخصصة أكثر</li>
+            </ul>
+            <a class="btn btn-secondary" style="width:100%" href="#contact">للطلبات الفخمة</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="demos">
+      <div class="container">
+        <div class="section-head">
+          <h2>النماذج والتجارب</h2>
+          <p>هنا حط روابط أمثلتك الفعلية لاحقًا. تركت لك أماكن جاهزة حتى تبدلها بروابط الهدايا أو معاينات عامة.</p>
+        </div>
+
+        <div class="demo-grid">
+          <article class="demo-card glass">
+            <div class="demo-media">
+              <div>
+                <div class="demo-tag"> هدية رقمية بسيطة </div>
+                <div class="demo-title">هدية رومانسية كلاسيكية</div>
+              </div>
+            </div>
+            <div class="demo-body">
+              نموذج برسالة أنيقة وصور وأجواء هادئة تناسب الهدايا العاطفية الكلاسيكية.<br><br>
+              <a class="btn btn-secondary" href="#contact">https://luvra-k3texviqu-murtada9780-7142s-projects.vercel.app/gift/qamar-basic </a>
+            </div>
+          </article>
+
+          <article class="demo-card glass">
+            <div class="demo-media two">
+              <div>
+                <div class="demo-tag">هدية رقمية قوية مخصصة للي على باب زواج لان بيهة مشاعر لا توصف </div>
+                <div class="demo-title">ستايل أفخم مع موسيقى</div>
+              </div>
+            </div>
+            <div class="demo-body">
+              مناسب لباقة  VIP، مع تجربة أغنى ومظهر أفخم وانتقالات أنعم.<br><br>
+              <a class="btn btn-secondary" href="#contact">https://luvra-k3texviqu-murtada9780-7142s-projects.vercel.app/gift/qamar-vip </a>
+            </div>
+          </article>
+
+          <article class="demo-card glass">
+            <div class="demo-media three">
+              <div>
+                <div class="demo-tag">هدية بسؤال سري مناسبة للمخطوبين و العلاقات الرومانسية المميزة</div>   
+                <div class="demo-title">هدية بسؤال سري</div>
+              </div>
+            </div>
+            <div class="demo-body">
+              فكرة جذابة تزيد التفاعل وتخلي الزائر يحس إن الهدية مصممة خصيصًا لشخص واحد.<br><br>
+              <a class="btn btn-secondary" href="#contact">https://luvra-k3texviqu-murtada9780-7142s-projects.vercel.app/gift/qamar-pro </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="container trust-grid">
+        <div class="trust-card glass">
+          <div class="section-head" style="text-align:right; margin-bottom:0;">
+            <h2>الأمان والثقة</h2>
+            <p>هذا القسم مهم جدًا لأن بعض الناس تخاف من الروابط. وجوده يطمّنهم ويرفع فرصة الشراء.</p>
+          </div>
+
+          <div class="trust-list">
+            <div class="trust-item"><div>🛡️</div><div><strong>ما يحتاج تسجيل دخول</strong>الرابط يفتح مباشرة من المتصفح بدون حسابات أو كلمات سر.</div></div>
+            <div class="trust-item"><div>🔐</div><div><strong>ما نطلب معلومات حساسة</strong>ماكو بطاقات بنكية، صلاحيات، تنزيلات، أو أي طلبات تخوف الزائر.</div></div>
+            <div class="trust-item"><div>🌐</div><div><strong>صفحة رسمية واضحة</strong>الباقات والنماذج والتواصل الواضح يخلي المشروع يبدو احترافي ومو مجهول.</div></div>
+            <div class="trust-item"><div>⚡</div><div><strong>تجربة سريعة</strong>كلشي واضح وسهل، وهذا يساعد الزبون ياخذ قرار أسرع.</div></div>
+          </div>
+        </div>
+
+        <div class="reviews-card glass">
+          <div class="section-head" style="text-align:right; margin-bottom:0;">
+            <h2>تجارب الزبائن</h2>
+            <p>بدّل النصوص الحالية لاحقًا بردود فعل حقيقية من زبائنك أو لقطات من المحادثات.</p>
+          </div>
+          <div class="reviews-grid">
+            <div class="review">
+              <p>"الفكرة طلعت أحلى من المتوقع، الرابط نفسه حسّسها إن الموضوع مرتب ومميز مو مجرد كلام."</p>
+              <strong>— تجربة عميل 1</strong>
+            </div>
+            <div class="review">
+              <p>"أكثر شي عجبني إن كلشي واضح: الباقات، السعر، وطريقة التواصل. حسّيت بثقة وأنا أطلب."</p>
+              <strong>— تجربة عميل 2</strong>
+            </div>
+            <div class="review">
+              <p>"حتى قبل لا أراسل، فهمت شنو المشروع وشلون يشتغل. الصفحة وحدها تشرح كلشي."</p>
+              <strong>— تجربة عميل 3</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-layout">
+        <div class="contact-card glass">
+          <div class="section-head" style="text-align:right; margin-bottom:0;">
+            <h2>أماكن التواصل</h2>
+            <p>بدّل الروابط التالية بروابطك الحقيقية وخلاص. حط واتساب وإنستغرام وتيك توك والإيميل.</p>
+          </div>
+
+          <div class="contact-links">
+            <a class="contact-link" href="https://wa.me/9647770998885" target="_blank" rel="noopener noreferrer">
+              <span>واتساب</span>
+              <small>ضع رقمك هنا</small>
+            </a>
+            <a class="contact-link" href="https://instagram.com/luvra.iq" target="_blank" rel="noopener noreferrer">
+              <span>إنستغرام</span>
+              <small>@luvra.iq</small>
+            </a>
+            <a class="contact-link" href="https://tiktok.com/@luvra.iq" target="_blank" rel="noopener noreferrer">
+              <span>تيك توك</span>
+              <small>@luvra.iq</small>
+            </a>
+            <a class="contact-link" href="#" target="_blank" rel="noopener noreferrer">
+              <span>البريد الإلكتروني</span>
+              <small>your@email.com</small>
+            </a>
+          </div>
+        </div>
+
+        <div class="faq-card glass">
+          <div class="section-head" style="text-align:right; margin-bottom:0;">
+            <h2>الأسئلة الشائعة</h2>
+            <p>هاي تساعد الزبون يتطمن بدون ما يراسلك على كل تفصيلة صغيرة.</p>
+          </div>
+
+          <div class="faq">
+            <details>
+              <summary>هل الرابط آمن؟</summary>
+              <p>نعم، الرابط للعرض فقط ولا يحتاج تسجيل دخول أو تنزيل تطبيق أو مشاركة بيانات حساسة.</p>
+            </details>
+            <details>
+              <summary>كم مدة التجهيز؟</summary>
+              <p>اكتب هنا المدة اللي تناسبك مثل: خلال ساعات أو خلال 24 ساعة حسب الباقة والتفاصيل.</p>
+            </details>
+            <details>
+              <summary>هل أگدر أطلب تصميم مخصص؟</summary>
+              <p>نعم، ممكن تضيف ألوان معينة أو فكرة محددة أو نوع مناسبة مختلف حسب الاتفاق.</p>
+            </details>
+            <details>
+              <summary>شلون أدفع أو أطلب؟</summary>
+              <p>اكتب هنا الطريقة اللي تناسبك، مثل التواصل المباشر عبر واتساب أو إنستغرام وترتيب التفاصيل هناك.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta glass">
+          <div>
+            <h3>الصفحة صارت جاهزة بشكل أقوى</h3>
+            <p>هسه عندك نسخة أفخم: فيها فيديو معاينة، زر واتساب ثابت، زر نسخ رابط، وتجهيز أوضح للبيع والثقة. بدّل النصوص والروابط وخليها تنطلق.</p>
+          </div>
+          <a class="btn btn-primary" href="#contact">ابدأ التواصل</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Luvra — صفحة تعريفية احترافية لمشروع الهدايا الرقمية.</div>
+  </footer>
+
+  <script>
+    const heartContainer = document.getElementById('hearts');
+    const heartSymbols = ['♥', '♡', '❤'];
+    for (let i = 0; i < 20; i++) {
+      const h = document.createElement('div');
+      h.className = 'heart';
+      h.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+      h.style.left = Math.random() * 100 + 'vw';
+      h.style.animationDuration = (10 + Math.random() * 12) + 's';
+      h.style.animationDelay = (Math.random() * 12) + 's';
+      h.style.fontSize = (12 + Math.random() * 18) + 'px';
+      heartContainer.appendChild(h);
+    }
+
+    function copySiteLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        alert('تم نسخ رابط الصفحة');
+      }).catch(() => {
+        alert('ما كدرت أنسخ الرابط، انسخه يدويًا');
+      });
+    }
+  </script>
+</body>
+</html>
