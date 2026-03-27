@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Luvra | هدايا رقمية رومانسية</title>
-  <meta name="description" content="Luvra - هدايا رقمية رومانسية بتصميم أنيق وتجارب مميزة وباقات واضحة وتواصل مباشر وآمن." />
+  <meta name="description" content="Luvra - صفحة تعريفية احترافية لمشروع هدايا رقمية رومانسية مع نظام طلب ذكي يرسل كل التفاصيل مباشرة إلى واتساب." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -18,6 +18,8 @@
       --primary: #9b6bff;
       --pink: #ff67b8;
       --gold: #f0ca82;
+      --success: #1bc67a;
+      --danger: #ff7b9e;
       --shadow: 0 12px 42px rgba(0,0,0,0.28);
       --radius-xl: 30px;
       --max: 1220px;
@@ -33,12 +35,13 @@
         radial-gradient(circle at 10% 10%, rgba(155,107,255,0.16), transparent 26%),
         radial-gradient(circle at 90% 15%, rgba(255,103,184,0.12), transparent 22%),
         radial-gradient(circle at 82% 80%, rgba(109,40,217,0.14), transparent 30%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 50%, #08080d 100%);
+        linear-gradient(180deg, #06060b 0%, #0c0814 50%, #08080d 100%);
       overflow-x: hidden;
     }
 
     a { color: inherit; text-decoration: none; }
     img, video, iframe { display: block; max-width: 100%; }
+    button, input, textarea, select { font-family: inherit; }
 
     .container {
       width: min(calc(100% - 32px), var(--max));
@@ -478,11 +481,7 @@
 
     .price-card h3 { margin: 0 0 8px; font-size: 1.35rem; }
     .price-sub { color: var(--muted); line-height: 1.85; margin-bottom: 16px; }
-    .price {
-      font-size: 2.8rem;
-      font-weight: 900;
-      margin-bottom: 18px;
-    }
+    .price { font-size: 2.8rem; font-weight: 900; margin-bottom: 18px; }
     .price small { font-size: 1rem; color: var(--muted); font-weight: 700; }
 
     .price-list {
@@ -560,7 +559,6 @@
     }
 
     .demo-title { font-size: 1.42rem; font-weight: 900; }
-
     .demo-body { padding: 18px; color: var(--muted); line-height: 1.9; }
 
     .trust-grid {
@@ -569,18 +567,18 @@
       gap: 18px;
     }
 
-    .trust-card, .reviews-card, .faq-card, .contact-card {
+    .trust-card, .reviews-card, .faq-card, .contact-card, .order-card, .order-side {
       padding: 24px;
       border-radius: 28px;
     }
 
-    .trust-list {
+    .trust-list, .reviews-grid, .faq, .contact-links {
       display: grid;
       gap: 12px;
-      margin-top: 18px;
+      margin-top: 16px;
     }
 
-    .trust-item {
+    .trust-item, .check-item {
       display: flex;
       gap: 12px;
       align-items: start;
@@ -589,12 +587,6 @@
     }
 
     .trust-item strong { display: block; color: #fff; }
-
-    .reviews-grid {
-      display: grid;
-      gap: 14px;
-      margin-top: 16px;
-    }
 
     .review {
       padding: 16px;
@@ -606,16 +598,10 @@
     .review p { margin: 0 0 10px; line-height: 1.9; color: #f5efff; }
     .review strong { color: var(--muted); font-size: .95rem; }
 
-    .contact-layout {
+    .contact-layout, .order-layout {
       display: grid;
       grid-template-columns: 0.95fr 1.05fr;
       gap: 18px;
-    }
-
-    .contact-links {
-      display: grid;
-      gap: 12px;
-      margin-top: 16px;
     }
 
     .contact-link {
@@ -637,12 +623,6 @@
 
     .contact-link small { color: var(--muted); }
 
-    .faq {
-      display: grid;
-      gap: 12px;
-      margin-top: 16px;
-    }
-
     details {
       border-radius: 18px;
       background: rgba(255,255,255,0.05);
@@ -658,6 +638,181 @@
 
     summary::-webkit-details-marker { display: none; }
     details p { margin: 12px 0 0; color: var(--muted); line-height: 1.9; }
+
+    .order-layout { align-items: start; }
+
+    .order-card h3, .order-side h3 {
+      margin: 0 0 8px;
+      font-size: 1.4rem;
+      font-weight: 900;
+    }
+
+    .order-card p, .order-side p {
+      color: var(--muted);
+      line-height: 1.9;
+      margin: 0 0 18px;
+    }
+
+    .order-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .field.full { grid-column: 1 / -1; }
+
+    .field label {
+      font-size: .95rem;
+      font-weight: 700;
+      color: #f3ecff;
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      padding: 14px 16px;
+      outline: none;
+      transition: .25s ease;
+      resize: vertical;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: #a998c7;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: rgba(155,107,255,0.7);
+      box-shadow: 0 0 0 3px rgba(155,107,255,0.16);
+    }
+
+    .package-switcher {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .package-option {
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: #fff;
+      padding: 16px;
+      cursor: pointer;
+      transition: .25s ease;
+      text-align: right;
+    }
+
+    .package-option:hover { transform: translateY(-2px); }
+
+    .package-option.active {
+      border-color: rgba(240,202,130,0.7);
+      background: linear-gradient(180deg, rgba(240,202,130,0.12), rgba(155,107,255,0.06));
+      box-shadow: 0 0 0 3px rgba(240,202,130,0.13);
+    }
+
+    .package-option strong {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .package-option span {
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.7;
+      display: block;
+    }
+
+    .feature-panel {
+      margin: 18px 0 0;
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .feature-panel h4 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 8px;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .feature-list div { display: flex; gap: 8px; }
+
+    .helper {
+      color: #bcaede;
+      font-size: .84rem;
+      line-height: 1.8;
+      margin-top: 6px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .status-box {
+      margin-top: 16px;
+      border-radius: 18px;
+      padding: 14px 16px;
+      font-size: .92rem;
+      line-height: 1.85;
+      display: none;
+    }
+
+    .status-box.success {
+      display: block;
+      background: rgba(27,198,122,0.1);
+      border: 1px solid rgba(27,198,122,0.28);
+      color: #d8fff0;
+    }
+
+    .status-box.error {
+      display: block;
+      background: rgba(255,123,158,0.1);
+      border: 1px solid rgba(255,123,158,0.28);
+      color: #ffe2ea;
+    }
+
+    .order-summary {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #f7f2ff;
+    }
+
+    .summary-item small { color: var(--muted); }
 
     .cta {
       margin: 30px 0 40px;
@@ -698,7 +853,8 @@
       .hero-grid,
       .video-layout,
       .trust-grid,
-      .contact-layout {
+      .contact-layout,
+      .order-layout {
         grid-template-columns: 1fr;
       }
       .grid-4 { grid-template-columns: repeat(2,1fr); }
@@ -713,7 +869,9 @@
       .hero { padding-top: 44px; }
       .grid-4,
       .pricing,
-      .demo-grid { grid-template-columns: 1fr; }
+      .demo-grid,
+      .package-switcher,
+      .order-grid { grid-template-columns: 1fr; }
       .hero-actions,
       .hero-notes { flex-direction: column; align-items: stretch; }
       .cta { flex-direction: column; align-items: start; }
@@ -739,15 +897,15 @@
         <a href="#video">المعاينة</a>
         <a href="#packages">الباقات</a>
         <a href="#demos">النماذج</a>
-        <a href="#reviews">التجارب</a>
+        <a href="#order">الطلب الذكي</a>
         <a href="#contact">التواصل</a>
       </div>
 
-      <a class="btn btn-primary" href="https://wa.me/9647770998885?text=%D8%A7%D8%B1%D9%8A%D8%AF%20%D8%A7%D8%B7%D9%84%D8%A8%20%D9%87%D8%AF%D9%8A%D8%A9%20%D9%85%D9%86%20Luvra" target="_blank" rel="noopener noreferrer">اطلب الآن</a>
+      <a class="btn btn-primary" href="#order">اطلب الآن</a>
     </div>
   </div>
 
-  <a class="wa-float" href="https://wa.me/9647770998885?text=%D8%A7%D8%B1%D9%8A%D8%AF%20%D8%A7%D8%B7%D9%84%D8%A8%20%D9%87%D8%AF%D9%8A%D8%A9%20%D9%85%D9%86%20Luvra" target="_blank" rel="noopener noreferrer">راسلني واتساب</a>
+  <a class="wa-float" href="#order">ابدأ الطلب</a>
 
   <main id="top">
     <section class="hero">
@@ -757,7 +915,7 @@
           <h1>هديتك تصير <span class="accent">تجربة فخمة</span><br>بدل رسالة عادية</h1>
           <p>
             Luvra مشروع هدايا رقمية مخصص يحوّل الرسائل والصور والأغاني والذكريات إلى موقع تفاعلي أنيق.
-            الفكرة مو مجرد صفحة، الفكرة تجربة كاملة تخلي الهدية تبقى بالبال.
+            الفكرة مو مجرد صفحة، الفكرة تجربة كاملة تخلي الهدية تبقى بالبال وتوصل الشعور بطريقة مختلفة.
           </p>
 
           <div class="hero-actions">
@@ -768,7 +926,7 @@
 
           <div class="hero-notes">
             <span>🛡️ آمن بدون تسجيل دخول</span>
-            <span>💬 تواصل مباشر وواضح</span>
+            <span>💬 طلب مباشر وذكي</span>
             <span>💜 مناسب للحب والمناسبات</span>
           </div>
         </div>
@@ -783,7 +941,7 @@
               <div>
                 <div class="screen-badge">هدية خاصة ♥</div>
                 <div class="screen-title">تجربة تبقى<br>مو مجرد كلام</div>
-                <div class="screen-text">تصميم أنيق، رسالة مرتبة، صور، موسيقى، وصفحة ختامية تخلي الهدية مميزة من أول ثانية.</div>
+                <div class="screen-text">تصميم أنيق، رسالة مرتبة، صور، موسيقى، ذكريات، وقصة كاملة تخلي الهدية مميزة من أول ثانية.</div>
               </div>
               <div class="floating-panel">
                 <div class="line short"></div>
@@ -823,7 +981,7 @@
           <div class="card glass">
             <div class="icon">🔒</div>
             <h3>أفكار مميزة</h3>
-            <p>مثل سؤال سري أو مقدمة أنيقة أو رحلة متعددة الصفحات للطلبات الفخمة والمميزة.</p>
+            <p>مثل كلمة سر، رسالة مخفية، عداد للعلاقة، وعد تنازلي لمفاجأة قادمة حسب الباقة.</p>
           </div>
         </div>
       </div>
@@ -862,18 +1020,18 @@
         <div class="steps">
           <div class="step glass">
             <div class="step-num">1</div>
-            <h3>ترسل التفاصيل</h3>
-            <p>الاسم، الرسالة، الصور، نوع المناسبة، وأي إضافات خاصة تريدها داخل الهدية.</p>
+            <h3>تختار الباقة</h3>
+            <p>كل باقة بيها مميزات محددة، وتختار الأنسب حسب مستوى الفخامة اللي تريده.</p>
           </div>
           <div class="step glass">
             <div class="step-num">2</div>
-            <h3>أجهز الموقع</h3>
-            <p>أرتب المحتوى داخل الباقة المناسبة بتصميم أنيق وواضح حسب فكرة الطلب.</p>
+            <h3>تكتب التفاصيل</h3>
+            <p>اسم المرسل والمستلم، الرسائل، الذكريات، الصور، كلمة السر، وكل الإضافات المطلوبة.</p>
           </div>
           <div class="step glass">
             <div class="step-num">3</div>
-            <h3>تستلم الرابط</h3>
-            <p>رابط جاهز للمشاركة يفتح من المتصفح مباشرة بدون تحميل أو تسجيل دخول.</p>
+            <h3>ينرسل الطلب واتساب</h3>
+            <p>كل التفاصيل تنكتب تلقائيًا داخل رسالة مرتبة في واتساب حتى أبدأ بالتنفيذ مباشرة.</p>
           </div>
         </div>
       </div>
@@ -883,7 +1041,7 @@
       <div class="container">
         <div class="section-head">
           <h2>الباقات والأسعار</h2>
-          <p>جميع الباقات تدعم قوالب متعددة، وكل باقة تختلف حسب مستوى الفخامة والتفاصيل.</p>
+          <p>كل باقة تختلف حسب مستوى الفخامة والتفاصيل والتجربة الكاملة.</p>
         </div>
 
         <div class="pricing">
@@ -892,13 +1050,13 @@
             <div class="price-sub">بداية بسيطة وحلوة</div>
             <div class="price">$5 <small>/ هدية</small></div>
             <ul class="price-list">
-              <li>صفحة واحدة أنيقة</li>
-              <li>رسالة منسقة</li>
+              <li>رسالة رئيسية</li>
               <li>صور داخل الهدية</li>
+              <li>موسيقى</li>
+              <li>تصميم أنيق وبسيط</li>
               <li>رابط خاص للمشاركة</li>
-              <li>تصميم سريع وواضح</li>
             </ul>
-            <a class="btn btn-secondary" style="width:100%" href="https://wa.me/9647770998885?text=%D8%A7%D8%B1%D9%8A%D8%AF%20%D8%A7%D8%B7%D9%84%D8%A8%20%D8%A8%D8%A7%D9%82%D8%A9%20Basic" target="_blank" rel="noopener noreferrer">اختيار هذي الباقة</a>
+            <a class="btn btn-secondary" style="width:100%" href="#order">اختيار هذي الباقة</a>
           </article>
 
           <article class="price-card glass popular">
@@ -907,13 +1065,13 @@
             <div class="price-sub">الخيار الأفضل للبيع</div>
             <div class="price">$10 <small>/ هدية</small></div>
             <ul class="price-list">
-              <li>عدة سكشنات مرتبة</li>
-              <li>صور + رسالة أطول</li>
-              <li>موسيقى أو أجواء أجمل</li>
-              <li>تصميم أفخم وانتقالات أنعم</li>
-              <li>صفحة ختامية مميزة</li>
+              <li>رسالة مقسمة إلى سكشنات</li>
+              <li>ذكريات مع تواريخ</li>
+              <li>صور + موسيقى</li>
+              <li>كلمة سر + جواب</li>
+              <li>رسالة مخفية</li>
             </ul>
-            <a class="btn btn-primary" style="width:100%" href="https://wa.me/9647770998885?text=%D8%A7%D8%B1%D9%8A%D8%AF%20%D8%A7%D8%B7%D9%84%D8%A8%20%D8%A8%D8%A7%D9%82%D8%A9%20Pro" target="_blank" rel="noopener noreferrer">أفضل خيار للطلب</a>
+            <a class="btn btn-primary" style="width:100%" href="#order">أفضل خيار للطلب</a>
           </article>
 
           <article class="price-card glass">
@@ -921,13 +1079,13 @@
             <div class="price-sub">للهدايا المميزة جدًا</div>
             <div class="price">$20 <small>/ هدية</small></div>
             <ul class="price-list">
-              <li>رحلة متعددة الصفحات</li>
-              <li>مقدمة سينمائية</li>
-              <li>سؤال أو قفل سري</li>
-              <li>ترتيب ذكريات بتفاصيل أكثر</li>
+              <li>كل مميزات Pro</li>
+              <li>تايم لاين كامل</li>
+              <li>عداد للعلاقة</li>
+              <li>عداد مفاجأة قادمة</li>
               <li>تجربة أفخم ومخصصة أكثر</li>
             </ul>
-            <a class="btn btn-secondary" style="width:100%" href="https://wa.me/9647770998885?text=%D8%A7%D8%B1%D9%8A%D8%AF%20%D8%A7%D8%B7%D9%84%D8%A8%20%D8%A8%D8%A7%D9%82%D8%A9%20VIP" target="_blank" rel="noopener noreferrer">للطلبات الفخمة</a>
+            <a class="btn btn-secondary" style="width:100%" href="#order">للطلبات الفخمة</a>
           </article>
         </div>
       </div>
@@ -979,6 +1137,170 @@
               <a class="btn btn-secondary" href="https://luvra-gift.vercel.app/gift/qamar-pro" target="_blank" rel="noopener noreferrer">عرض الهدية</a>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="order">
+      <div class="container">
+        <div class="section-head">
+          <h2>نظام الطلب الذكي</h2>
+          <p>اكتب تفاصيل الهدية كاملة، والنظام يرتبها ويرسلها مباشرة إلى واتساب بشكل جاهز وواضح.</p>
+        </div>
+
+        <div class="order-layout">
+          <div class="order-card glass">
+            <h3>ابدأ الطلب</h3>
+            <p>اختَر الباقة أولاً، وبعدها راح يظهر لك النظام المناسب لها تلقائيًا.</p>
+
+            <div class="package-switcher" id="packageSwitcher">
+              <button type="button" class="package-option active" data-package="basic">
+                <strong>Basic</strong>
+                <span>رسالة + صور + موسيقى</span>
+              </button>
+              <button type="button" class="package-option" data-package="pro">
+                <strong>Pro</strong>
+                <span>سكشنات + ذكريات + كلمة سر + رسالة مخفية</span>
+              </button>
+              <button type="button" class="package-option" data-package="vip">
+                <strong>VIP</strong>
+                <span>كل المميزات + عداد العلاقة + عداد المفاجأة</span>
+              </button>
+            </div>
+
+            <form id="orderForm">
+              <div class="order-grid">
+                <div class="field">
+                  <label for="senderName">اسم المرسل</label>
+                  <input id="senderName" name="senderName" type="text" placeholder="مثال: مرتضى" required>
+                </div>
+
+                <div class="field">
+                  <label for="receiverName">اسم المستلم</label>
+                  <input id="receiverName" name="receiverName" type="text" placeholder="مثال: براء" required>
+                </div>
+
+                <div class="field full">
+                  <label for="packageName">الباقة المختارة</label>
+                  <input id="packageName" name="packageName" type="text" value="Basic" readonly>
+                </div>
+
+                <div class="field full">
+                  <label for="mainMessage">الرسالة الرئيسية</label>
+                  <textarea id="mainMessage" name="mainMessage" rows="4" placeholder="اكتب الرسالة الأساسية هنا" required></textarea>
+                </div>
+
+                <div class="field full basic-only">
+                  <label for="basicImages">روابط الصور أو وصف الصور</label>
+                  <textarea id="basicImages" name="basicImages" rows="3" placeholder="اكتب روابط الصور أو عدد الصور المطلوبة"></textarea>
+                  <div class="helper">هذا الحقل مناسب لكل الباقات، لكنه أساسي في Basic.</div>
+                </div>
+
+                <div class="field full">
+                  <label for="musicLink">رابط الأغنية أو اسمها</label>
+                  <input id="musicLink" name="musicLink" type="text" placeholder="رابط يوتيوب أو اسم الأغنية">
+                </div>
+
+                <div class="field full pro-vip-only hidden">
+                  <label for="sectionMessages">الرسائل المقسمة إلى سكشنات</label>
+                  <textarea id="sectionMessages" name="sectionMessages" rows="5" placeholder="مثال:\nسكشن 1: البداية...\nسكشن 2: ليش أحبك...\nسكشن 3: النهاية..."></textarea>
+                </div>
+
+                <div class="field full pro-vip-only hidden">
+                  <label for="memories">الذكريات مع التواريخ</label>
+                  <textarea id="memories" name="memories" rows="5" placeholder="مثال:\n01/05/2024 - أول لقاء\n14/08/2024 - أول هدية\n31/12/2024 - أحلى يوم سويناه"></textarea>
+                </div>
+
+                <div class="field pro-vip-only hidden">
+                  <label for="secretQuestion">كلمة السر / السؤال السري</label>
+                  <input id="secretQuestion" name="secretQuestion" type="text" placeholder="مثال: شنو أول مكان التقينا بيه؟">
+                </div>
+
+                <div class="field pro-vip-only hidden">
+                  <label for="secretAnswer">الجواب</label>
+                  <input id="secretAnswer" name="secretAnswer" type="text" placeholder="مثال: الجامعة">
+                </div>
+
+                <div class="field full pro-vip-only hidden">
+                  <label for="hiddenMessage">الرسالة المخفية</label>
+                  <textarea id="hiddenMessage" name="hiddenMessage" rows="4" placeholder="اكتب الرسالة المخفية هنا"></textarea>
+                </div>
+
+                <div class="field full vip-only hidden">
+                  <label for="relationshipDate">تاريخ بداية العلاقة</label>
+                  <input id="relationshipDate" name="relationshipDate" type="date">
+                  <div class="helper">يستخدم لعرض عداد: صارلنا شكد سوة.</div>
+                </div>
+
+                <div class="field vip-only hidden">
+                  <label for="surpriseDate">تاريخ ووقت المفاجأة</label>
+                  <input id="surpriseDate" name="surpriseDate" type="datetime-local">
+                </div>
+
+                <div class="field vip-only hidden">
+                  <label for="surpriseTitle">اسم المفاجأة</label>
+                  <input id="surpriseTitle" name="surpriseTitle" type="text" placeholder="مثال: موعدنا بعد يومين">
+                </div>
+
+                <div class="field full">
+                  <label for="extraNotes">ملاحظات إضافية</label>
+                  <textarea id="extraNotes" name="extraNotes" rows="4" placeholder="أي تفاصيل إضافية تحب تضيفها"></textarea>
+                </div>
+              </div>
+
+              <div class="feature-panel" id="featurePanel">
+                <h4>محتوى الباقة الحالية</h4>
+                <div class="feature-list" id="featureList"></div>
+              </div>
+
+              <div id="statusBox" class="status-box"></div>
+
+              <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;">
+                <button type="submit" class="btn btn-primary">إرسال الطلب إلى واتساب</button>
+                <button type="button" class="btn btn-secondary" id="clearFormBtn">مسح البيانات</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="order-side glass">
+            <h3>ملخص الباقات</h3>
+            <p>هذا الملخص يساعد الزبون يفهم بسرعة شنو يجي بكل باقة قبل لا يرسل الطلب.</p>
+
+            <div class="order-summary">
+              <div class="summary-item">
+                <div>
+                  <strong>Basic</strong>
+                  <small>رسالة + صور + موسيقى</small>
+                </div>
+                <div>$5</div>
+              </div>
+
+              <div class="summary-item">
+                <div>
+                  <strong>Pro</strong>
+                  <small>سكشنات + ذكريات + كلمة سر + رسالة مخفية</small>
+                </div>
+                <div>$10</div>
+              </div>
+
+              <div class="summary-item">
+                <div>
+                  <strong>VIP</strong>
+                  <small>كل المميزات + عداد العلاقة + عداد المفاجأة</small>
+                </div>
+                <div>$20</div>
+              </div>
+            </div>
+
+            <div class="feature-panel" style="margin-top:18px;">
+              <h4>ملاحظات مهمة</h4>
+              <div class="feature-list">
+                <div>• كل الطلبات تنرسل مباشرة إلى واتساب بشكل مرتب.</div>
+                <div>• اكتب التفاصيل بوضوح حتى أقدر أنفذها أسرع.</div>
+                <div>• إذا تريد تصميم مختلف أو فكرة مخصصة، اكتبها بملاحظات إضافية.</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1079,9 +1401,9 @@
         <div class="cta glass">
           <div>
             <h3>جاهز تطلب هديتك؟</h3>
-            <p>إذا عجبتك الفكرة أو تريد هدية مخصصة، راسلني مباشرة واختر الباقة المناسبة.</p>
+            <p>إذا عجبتك الفكرة أو تريد هدية مخصصة، انزل إلى الطلب الذكي وخلّي كل التفاصيل تنرسل مرتبة مباشرة.</p>
           </div>
-          <a class="btn btn-primary" href="https://wa.me/9647770998885?text=%D8%A7%D8%B1%D9%8A%D8%AF%20%D8%A7%D8%B7%D9%84%D8%A8%20%D9%87%D8%AF%D9%8A%D8%A9%20%D9%85%D9%86%20Luvra" target="_blank" rel="noopener noreferrer">ابدأ التواصل</a>
+          <a class="btn btn-primary" href="#order">ابدأ الطلب</a>
         </div>
       </div>
     </section>
@@ -1092,6 +1414,7 @@
   </footer>
 
   <script>
+    const WHATSAPP_NUMBER = '9647770998885';
     const heartContainer = document.getElementById('hearts');
     const heartSymbols = ['♥', '♡', '❤'];
     for (let i = 0; i < 20; i++) {
@@ -1112,6 +1435,173 @@
         alert('ما كدرت أنسخ الرابط، انسخه يدويًا');
       });
     }
+
+    const packageConfig = {
+      basic: {
+        name: 'Basic',
+        features: [
+          'رسالة رئيسية',
+          'صور',
+          'موسيقى',
+          'تصميم أنيق وبسيط'
+        ]
+      },
+      pro: {
+        name: 'Pro',
+        features: [
+          'رسالة مقسمة إلى سكشنات',
+          'ذكريات مع تواريخ',
+          'صور + موسيقى',
+          'كلمة سر + جواب',
+          'رسالة مخفية'
+        ]
+      },
+      vip: {
+        name: 'VIP',
+        features: [
+          'كل مميزات Pro',
+          'تايم لاين كامل',
+          'عداد للعلاقة',
+          'عداد للمفاجأة القادمة',
+          'تجربة أفخم ومخصصة أكثر'
+        ]
+      }
+    };
+
+    const packageButtons = document.querySelectorAll('.package-option');
+    const packageNameInput = document.getElementById('packageName');
+    const featureList = document.getElementById('featureList');
+    const statusBox = document.getElementById('statusBox');
+    const form = document.getElementById('orderForm');
+    const clearFormBtn = document.getElementById('clearFormBtn');
+
+    function setPackage(selected) {
+      packageButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.package === selected);
+      });
+
+      packageNameInput.value = packageConfig[selected].name;
+      featureList.innerHTML = packageConfig[selected].features
+        .map(item => `<div>• ${item}</div>`)
+        .join('');
+
+      document.querySelectorAll('.pro-vip-only').forEach(el => {
+        el.classList.toggle('hidden', selected === 'basic');
+      });
+
+      document.querySelectorAll('.vip-only').forEach(el => {
+        el.classList.toggle('hidden', selected !== 'vip');
+      });
+    }
+
+    packageButtons.forEach(btn => {
+      btn.addEventListener('click', () => setPackage(btn.dataset.package));
+    });
+
+    setPackage('basic');
+
+    function textValue(id) {
+      const el = document.getElementById(id);
+      return el ? el.value.trim() : '';
+    }
+
+    function createMessage() {
+      const packageName = textValue('packageName');
+      const senderName = textValue('senderName');
+      const receiverName = textValue('receiverName');
+      const mainMessage = textValue('mainMessage');
+      const basicImages = textValue('basicImages');
+      const musicLink = textValue('musicLink');
+      const sectionMessages = textValue('sectionMessages');
+      const memories = textValue('memories');
+      const secretQuestion = textValue('secretQuestion');
+      const secretAnswer = textValue('secretAnswer');
+      const hiddenMessage = textValue('hiddenMessage');
+      const relationshipDate = textValue('relationshipDate');
+      const surpriseDate = textValue('surpriseDate');
+      const surpriseTitle = textValue('surpriseTitle');
+      const extraNotes = textValue('extraNotes');
+
+      const lines = [];
+      lines.push('طلب جديد من موقع Luvra');
+      lines.push('');
+      lines.push(`الباقة: ${packageName}`);
+      lines.push(`اسم المرسل: ${senderName}`);
+      lines.push(`اسم المستلم: ${receiverName}`);
+      lines.push('');
+      lines.push('الرسالة الرئيسية:');
+      lines.push(mainMessage || '-');
+
+      if (basicImages) {
+        lines.push('');
+        lines.push('الصور / وصف الصور:');
+        lines.push(basicImages);
+      }
+
+      if (musicLink) {
+        lines.push('');
+        lines.push(`الموسيقى: ${musicLink}`);
+      }
+
+      if (packageName !== 'Basic') {
+        lines.push('');
+        lines.push('الرسائل المقسمة إلى سكشنات:');
+        lines.push(sectionMessages || '-');
+        lines.push('');
+        lines.push('الذكريات مع التواريخ:');
+        lines.push(memories || '-');
+        lines.push('');
+        lines.push(`كلمة السر / السؤال السري: ${secretQuestion || '-'}`);
+        lines.push(`الجواب: ${secretAnswer || '-'}`);
+        lines.push('');
+        lines.push('الرسالة المخفية:');
+        lines.push(hiddenMessage || '-');
+      }
+
+      if (packageName === 'VIP') {
+        lines.push('');
+        lines.push(`تاريخ بداية العلاقة: ${relationshipDate || '-'}`);
+        lines.push(`تاريخ ووقت المفاجأة: ${surpriseDate || '-'}`);
+        lines.push(`اسم المفاجأة: ${surpriseTitle || '-'}`);
+      }
+
+      if (extraNotes) {
+        lines.push('');
+        lines.push('ملاحظات إضافية:');
+        lines.push(extraNotes);
+      }
+
+      return lines.join('\n');
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      statusBox.className = 'status-box';
+      statusBox.textContent = '';
+
+      const senderName = textValue('senderName');
+      const receiverName = textValue('receiverName');
+      const mainMessage = textValue('mainMessage');
+
+      if (!senderName || !receiverName || !mainMessage) {
+        statusBox.className = 'status-box error';
+        statusBox.textContent = 'لازم تملأ اسم المرسل واسم المستلم والرسالة الرئيسية أولاً.';
+        return;
+      }
+
+      const message = createMessage();
+      const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+      statusBox.className = 'status-box success';
+      statusBox.textContent = 'تم تجهيز الطلب. سيتم فتح واتساب الآن بالرسالة المرتبة.';
+      window.open(whatsappUrl, '_blank');
+    });
+
+    clearFormBtn.addEventListener('click', function () {
+      form.reset();
+      setPackage('basic');
+      statusBox.className = 'status-box';
+      statusBox.textContent = '';
+    });
   </script>
 </body>
 </html>
