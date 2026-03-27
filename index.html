@@ -6,14 +6,24 @@
 <title>Luvra | هدية رقمية فخمة</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+
+/* ================= RESET ================= */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+/* ================= BODY ================= */
 body{
 background:radial-gradient(circle at top,#1a0826,#050508);
 color:#fff;
 overflow-x:hidden;
+line-height:1.7;
 }
 
-/* NAV */
+/* ================= NAV ================= */
 nav{
 position:fixed;
 top:0;
@@ -21,12 +31,19 @@ width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 20px;
+padding:15px 25px;
 background:rgba(0,0,0,0.6);
 backdrop-filter:blur(12px);
 z-index:999;
 }
-.logo{font-size:22px;font-weight:bold;color:#c084fc}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#c084fc;
+letter-spacing:1px;
+}
+
 .nav-btn{
 background:#c084fc;
 color:#000;
@@ -36,7 +53,7 @@ text-decoration:none;
 font-weight:bold;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 .hero{
 height:100vh;
 display:flex;
@@ -46,15 +63,19 @@ align-items:center;
 text-align:center;
 padding:20px;
 }
+
 .hero h1{
 font-size:48px;
 margin-bottom:15px;
 }
+
 .hero p{
+max-width:650px;
 opacity:.8;
-max-width:600px;
-margin-bottom:20px;
+margin-bottom:25px;
 }
+
+/* ================= BUTTON ================= */
 .btn{
 padding:14px 22px;
 border-radius:30px;
@@ -62,88 +83,92 @@ border:none;
 cursor:pointer;
 font-weight:bold;
 }
-.btn-primary{background:#c084fc;color:#000}
-.btn-secondary{background:#222;color:#fff;border:1px solid #555}
 
-/* HEARTS */
-#hearts{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-pointer-events:none;
-z-index:0;
-}
-.heart{
-position:absolute;
-color:#ff4d6d;
-opacity:0.3;
-animation:float 12s linear infinite;
-}
-@keyframes float{
-0%{transform:translateY(100vh)}
-100%{transform:translateY(-10vh)}
+.btn-primary{
+background:#c084fc;
+color:#000;
 }
 
-/* SECTION */
+.btn-secondary{
+background:#222;
+color:#fff;
+border:1px solid #555;
+}
+
+/* ================= SECTION ================= */
 section{
 padding:100px 20px;
 max-width:1100px;
 margin:auto;
 }
+
 .section-title{
 text-align:center;
-font-size:28px;
-margin-bottom:30px;
+font-size:30px;
+margin-bottom:35px;
 }
 
-/* GLASS CARD */
-.card{
+/* ================= GLASS ================= */
+.glass{
 background:rgba(255,255,255,0.03);
 border:1px solid rgba(255,255,255,0.1);
-padding:25px;
 border-radius:25px;
 backdrop-filter:blur(12px);
 }
 
-/* FEATURES */
+/* ================= FEATURES ================= */
 .features{
 display:grid;
 grid-template-columns:1fr;
 gap:20px;
 }
+
 .feature{
 padding:20px;
-border-radius:20px;
-background:rgba(255,255,255,0.03);
-border:1px solid rgba(255,255,255,0.1);
 }
 
-/* PACKAGES */
+/* ================= PACKAGES ================= */
 .packages{
 display:grid;
 grid-template-columns:1fr;
 gap:20px;
 }
+
+.card{
+padding:25px;
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
 .price{
 font-size:30px;
 color:#c084fc;
 margin:15px 0;
 }
 
-/* FAQ */
+/* ================= TESTIMONIAL ================= */
+.testimonial{
+padding:20px;
+margin-bottom:15px;
+}
+
+/* ================= FAQ ================= */
 .faq-item{
 margin-bottom:15px;
 cursor:pointer;
 }
+
 .faq-answer{
 display:none;
 opacity:.7;
 padding-top:10px;
 }
 
-/* FORM */
+/* ================= FORM ================= */
 input,textarea,select{
 width:100%;
 padding:14px;
@@ -154,7 +179,7 @@ background:#111;
 color:#fff;
 }
 
-/* CONTACT */
+/* ================= CONTACT ================= */
 .contact-links a{
 display:block;
 margin:12px 0;
@@ -163,7 +188,7 @@ text-decoration:none;
 font-size:18px;
 }
 
-/* FLOAT WA */
+/* ================= FLOAT WA ================= */
 .wa{
 position:fixed;
 bottom:20px;
@@ -177,12 +202,36 @@ text-decoration:none;
 z-index:999;
 }
 
-/* MOBILE */
+/* ================= HEARTS ================= */
+#hearts{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:0;
+}
+
+.heart{
+position:absolute;
+color:#ff4d6d;
+opacity:0.3;
+animation:float 12s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh)}
+100%{transform:translateY(-10vh)}
+}
+
+/* ================= MOBILE ================= */
 @media(min-width:768px){
 .features{grid-template-columns:1fr 1fr}
 .packages{grid-template-columns:1fr 1fr 1fr}
 .hero h1{font-size:60px}
 }
+
 </style>
 </head>
 
@@ -197,17 +246,17 @@ z-index:999;
 
 <section class="hero">
 <h1>مو مجرد هدية… تجربة كاملة</h1>
-<p>موقع خاص بالشخص اللي تحبه يحتوي رسالتك، صوركم، موسيقى، وتجربة تخليه يعيش لحظة ما ينساها</p>
+<p>نسوي لك موقع خاص يخلي الشخص يعيش لحظة ما ينساها</p>
 <button class="btn btn-primary" onclick="openGeneral()">ابدأ الآن</button>
 </section>
 
 <section>
-<h2 class="section-title">ليش الناس تختار Luvra ؟</h2>
+<h2 class="section-title">ليش Luvra ؟</h2>
 <div class="features">
-<div class="feature">تجربة سينمائية مو موجودة بأي مكان</div>
-<div class="feature">كل هدية تصميم خاص مو قالب جاهز</div>
-<div class="feature">رابط خاص وسري لكل شخص</div>
-<div class="feature">تسليم سريع وبدقة عالية</div>
+<div class="feature glass">تجربة سينمائية</div>
+<div class="feature glass">تصميم خاص لكل طلب</div>
+<div class="feature glass">رابط خاص وسري</div>
+<div class="feature glass">تسليم سريع</div>
 </div>
 </section>
 
@@ -216,24 +265,24 @@ z-index:999;
 
 <div class="packages">
 
-<div class="card">
+<div class="card glass">
 <h3>Basic</h3>
 <div class="price">3$</div>
 <p>صفحة + رسالة + صور</p>
 <button class="btn btn-secondary" onclick="openPackage('Basic')">اختار</button>
 </div>
 
-<div class="card">
+<div class="card glass">
 <h3>Pro</h3>
 <div class="price">5$</div>
-<p>سكشنات + موسيقى + تجربة اقوى</p>
+<p>سكشنات + موسيقى</p>
 <button class="btn btn-primary" onclick="openPackage('Pro')">اختار</button>
 </div>
 
-<div class="card">
+<div class="card glass">
 <h3>VIP</h3>
 <div class="price">10$</div>
-<p>تجربة كاملة + قفل سري + صفحات متعددة</p>
+<p>تجربة كاملة + قفل</p>
 <button class="btn btn-secondary" onclick="openPackage('VIP')">اختار</button>
 </div>
 
@@ -241,53 +290,43 @@ z-index:999;
 </section>
 
 <section>
-<h2 class="section-title">تجارب حقيقية</h2>
-<div class="card">“والله دمعت لما فتحته… ما توقعت هيج شي”</div>
-<div class="card" style="margin-top:15px">“أفضل هدية سويتها بحياتي”</div>
+<h2 class="section-title">تجارب</h2>
+<div class="testimonial glass">“والله دمعت”</div>
+<div class="testimonial glass">“أفضل هدية”</div>
 </section>
 
 <section>
-<h2 class="section-title">أسئلة شائعة</h2>
+<h2 class="section-title">FAQ</h2>
 
 <div class="faq-item" onclick="toggleFAQ(this)">
-شنو تحتاج مني؟
-<div class="faq-answer">ترسل النص والصور وانا أسوي كلشي</div>
+شنو تحتاج؟
+<div class="faq-answer">صور + رسالة</div>
 </div>
 
 <div class="faq-item" onclick="toggleFAQ(this)">
-كم وقت التنفيذ؟
-<div class="faq-answer">غالباً بنفس اليوم او خلال ساعات</div>
-</div>
-
-<div class="faq-item" onclick="toggleFAQ(this)">
-هل الرابط يبقى؟
-<div class="faq-answer">اي نعم يبقى دائم</div>
+كم الوقت؟
+<div class="faq-answer">خلال ساعات</div>
 </div>
 
 </section>
 
 <section>
-<h2 class="section-title">اطلب هديتك</h2>
+<h2 class="section-title">اطلب</h2>
 
 <input id="name" placeholder="اسمك">
 <input id="to" placeholder="اسم الشخص">
-<select id="type">
-<option>حب</option>
-<option>عيد ميلاد</option>
-<option>ذكرى</option>
-</select>
-<textarea id="note" placeholder="تفاصيل اضافية"></textarea>
+<textarea id="note" placeholder="تفاصيل"></textarea>
 
-<button class="btn btn-primary" style="width:100%" onclick="sendForm()">ارسال الطلب</button>
+<button class="btn btn-primary" style="width:100%" onclick="sendForm()">ارسال</button>
 </section>
 
 <section>
 <h2 class="section-title">تواصل</h2>
 
 <div class="contact-links">
-<a href="https://wa.me/9647770998885" target="_blank">واتساب</a>
-<a href="https://instagram.com/luvra.iq" target="_blank">انستقرام</a>
-<a href="https://tiktok.com/@luvra.iq" target="_blank">تيك توك</a>
+<a href="https://wa.me/9647770998885">واتساب</a>
+<a href="https://instagram.com/luvra.iq">انستقرام</a>
+<a href="https://tiktok.com/@luvra.iq">تيك توك</a>
 </div>
 
 </section>
@@ -295,6 +334,7 @@ z-index:999;
 <a class="wa" id="waFloat" href="#">واتساب</a>
 
 <script>
+
 const number="9647770998885";
 
 function wa(msg){
@@ -302,29 +342,23 @@ return `https://wa.me/${number}?text=${encodeURIComponent(msg)}`;
 }
 
 function openGeneral(){
-window.open(wa("هلاو، أريد أطلب هدية من Luvra"),"_blank");
+window.open(wa("هلاو أريد أطلب هدية"),"_blank");
 }
 
 function openPackage(p){
-let msg="";
-if(p==="Basic") msg="هلاو، أريد باقة Basic (3$)";
-if(p==="Pro") msg="هلاو، أريد باقة Pro (5$)";
-if(p==="VIP") msg="هلاو، أريد باقة VIP (10$)";
-window.open(wa(msg),"_blank");
+window.open(wa(`أريد باقة ${p}`),"_blank");
 }
 
 function sendForm(){
 const name=document.getElementById("name").value;
 const to=document.getElementById("to").value;
-const type=document.getElementById("type").value;
 const note=document.getElementById("note").value;
 
 const msg=`طلب هدية
 
-اسمي: ${name}
-للشخص: ${to}
-المناسبة: ${type}
-تفاصيل: ${note}`;
+${name}
+${to}
+${note}`;
 
 window.open(wa(msg),"_blank");
 }
@@ -334,9 +368,8 @@ const ans=el.querySelector(".faq-answer");
 ans.style.display=ans.style.display==="block"?"none":"block";
 }
 
-/* HEARTS */
 const container=document.getElementById("hearts");
-for(let i=0;i<50;i++){
+for(let i=0;i<60;i++){
 let h=document.createElement("div");
 h.className="heart";
 h.innerHTML="❤";
@@ -346,7 +379,8 @@ h.style.animationDuration=(8+Math.random()*10)+"s";
 container.appendChild(h);
 }
 
-document.getElementById("waFloat").href=wa("هلاو، أريد أطلب هدية");
+document.getElementById("waFloat").href=wa("طلب هدية");
+
 </script>
 
 </body>
