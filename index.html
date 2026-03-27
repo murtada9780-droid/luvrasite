@@ -1,430 +1,160 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luvra | هدية رقمية فخمة</title>
-
-<!-- SEO -->
-<meta name="description" content="اصنع هدية رقمية فخمة لشخص تحبه — موقع كامل يحتوي رسالة، صور، موسيقى وتجربة سينمائية">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Luvra | هدايا رقمية رومانسية</title>
 
 <style>
-
-/* ================= RESET ================= */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
-}
-
 body{
-background:radial-gradient(circle at top,#1a0826,#050508);
-color:#fff;
-overflow-x:hidden;
-line-height:1.7;
+margin:0;
+font-family:sans-serif;
+background:#06060b;
+color:white;
 }
 
-/* ================= NAV ================= */
-nav{
-position:fixed;
-top:0;
-width:100%;
+/* إصلاح الموبايل */
+.nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 25px;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(12px);
-z-index:999;
+padding:12px;
+flex-wrap:wrap;
 }
 
-.logo{
-font-size:24px;
-font-weight:bold;
-color:#c084fc;
-letter-spacing:1px;
-}
-
-.nav-btn{
-background:#c084fc;
-color:#000;
-padding:10px 18px;
-border-radius:25px;
-text-decoration:none;
-font-weight:bold;
-}
-
-/* ================= HERO ================= */
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
-
-.hero h1{
-font-size:52px;
-margin-bottom:15px;
-}
-
-.hero p{
-max-width:650px;
-opacity:.85;
-margin-bottom:25px;
-}
-
-/* ================= BUTTON ================= */
 .btn{
-padding:14px 22px;
-border-radius:30px;
+padding:12px 18px;
+border-radius:999px;
 border:none;
 cursor:pointer;
 font-weight:bold;
-transition:.3s;
 }
 
-.btn:hover{transform:scale(1.05)}
-
 .btn-primary{
-background:#c084fc;
-color:#000;
+background:linear-gradient(135deg,#9b6bff,#ff67b8);
+color:white;
 }
 
 .btn-secondary{
 background:#222;
-color:#fff;
-border:1px solid #555;
+color:white;
 }
 
-/* ================= SECTION ================= */
-section{
-padding:100px 20px;
-max-width:1100px;
-margin:auto;
-}
-
-.section-title{
-text-align:center;
-font-size:32px;
-margin-bottom:35px;
-}
-
-/* ================= GLASS ================= */
-.glass{
-background:rgba(255,255,255,0.03);
-border:1px solid rgba(255,255,255,0.1);
-border-radius:25px;
-backdrop-filter:blur(12px);
-}
-
-/* ================= FEATURES ================= */
-.features{
-display:grid;
-grid-template-columns:1fr;
-gap:20px;
-}
-
-.feature{
-padding:25px;
-}
-
-/* ================= HOW ================= */
-.steps{
-display:grid;
-gap:20px;
-}
-
-.step{
-padding:20px;
-}
-
-/* ================= PACKAGES ================= */
-.packages{
-display:grid;
-grid-template-columns:1fr;
-gap:20px;
-}
-
-.card{
-padding:25px;
-text-align:center;
-transition:0.3s;
-}
-
-.card:hover{transform:translateY(-5px)}
-
-.price{
-font-size:32px;
-color:#c084fc;
-margin:15px 0;
-}
-
-/* ================= TESTIMONIAL ================= */
-.testimonial{
-padding:20px;
-margin-bottom:15px;
-}
-
-/* ================= FAQ ================= */
-.faq-item{
-margin-bottom:15px;
-cursor:pointer;
-}
-
-.faq-answer{
-display:none;
-opacity:.7;
-padding-top:10px;
-}
-
-/* ================= FORM ================= */
-input,textarea,select{
-width:100%;
-padding:14px;
-margin:8px 0;
-border-radius:14px;
-border:none;
-background:#111;
-color:#fff;
-}
-
-/* ================= CONTACT ================= */
-.contact-links a{
-display:block;
-margin:12px 0;
-color:#c084fc;
-text-decoration:none;
-font-size:18px;
-}
-
-/* ================= FLOAT WA ================= */
-.wa{
+/* إصلاح زر واتساب */
+.wa-float{
 position:fixed;
-bottom:20px;
-left:20px;
-background:#25D366;
-color:#000;
-padding:14px 18px;
-border-radius:50px;
+bottom:15px;
+left:15px;
+right:15px;
+text-align:center;
+padding:15px;
+border-radius:999px;
+background:#1bc67a;
+color:white;
 font-weight:bold;
-text-decoration:none;
 z-index:999;
 }
 
-/* ================= HEARTS ================= */
-#hearts{
-position:fixed;
-top:0;
-left:0;
+/* إصلاح الفيديو */
+.video-box iframe{
 width:100%;
-height:100%;
-pointer-events:none;
-z-index:0;
+border-radius:12px;
 }
 
-.heart{
-position:absolute;
-color:#ff4d6d;
-opacity:0.25;
-animation:float 12s linear infinite;
+/* responsive */
+@media(max-width:600px){
+.hero-actions{
+display:flex;
+flex-direction:column;
 }
-
-@keyframes float{
-0%{transform:translateY(100vh)}
-100%{transform:translateY(-10vh)}
 }
-
-/* ================= MOBILE ================= */
-@media(min-width:768px){
-.features{grid-template-columns:1fr 1fr}
-.packages{grid-template-columns:1fr 1fr 1fr}
-.steps{grid-template-columns:1fr 1fr 1fr}
-.hero h1{font-size:60px}
-}
-
 </style>
 </head>
 
 <body>
 
-<div id="hearts"></div>
-
-<nav>
-<div class="logo">Luvra</div>
-<a href="#" class="nav-btn" onclick="openGeneral()">اطلب الآن</a>
-</nav>
+<!-- NAV -->
+<div class="nav">
+<div><b>Luvra</b></div>
+<button class="btn btn-primary" onclick="scrollToContact()">اطلب الآن</button>
+</div>
 
 <!-- HERO -->
-<section class="hero">
-<h1>مو مجرد هدية… تجربة كاملة</h1>
-<p>نسوي لك موقع خاص يخلي الشخص يعيش لحظة ما ينساها — رسالة، صور، موسيقى، وكل شي يمشي كأنه فيلم بينكم</p>
-<button class="btn btn-primary" onclick="openGeneral()">ابدأ الآن</button>
-</section>
+<section style="padding:40px">
+<h1>هديتك تصير تجربة مو مجرد رسالة</h1>
 
-<!-- WHY -->
-<section>
-<h2 class="section-title">ليش Luvra ؟</h2>
-<div class="features">
-<div class="feature glass">تجربة سينمائية مو موجودة بأي هدية</div>
-<div class="feature glass">تصميم خاص لكل طلب مو قالب جاهز</div>
-<div class="feature glass">رابط خاص وسري</div>
-<div class="feature glass">تسليم سريع جداً</div>
+<div class="hero-actions">
+<button class="btn btn-primary" onclick="orderWhatsApp('basic')">اطلب Basic</button>
+<button class="btn btn-primary" onclick="orderWhatsApp('pro')">اطلب Pro</button>
+<button class="btn btn-primary" onclick="orderWhatsApp('vip')">اطلب VIP</button>
 </div>
 </section>
 
-<!-- HOW -->
-<section>
-<h2 class="section-title">شلون يشتغل الطلب ؟</h2>
-<div class="steps">
-<div class="step glass">تتواصل ويانا</div>
-<div class="step glass">ترسل التفاصيل</div>
-<div class="step glass">نجهز الموقع ونرسله</div>
-</div>
-</section>
+<!-- VIDEO -->
+<section style="padding:40px">
+<h2>معاينة</h2>
 
-<!-- PACKAGES -->
-<section>
-<h2 class="section-title">الباقات</h2>
-
-<div class="packages">
-
-<div class="card glass">
-<h3>Basic</h3>
-<div class="price">3$</div>
-<p>صفحة + رسالة + صور</p>
-<button class="btn btn-secondary" onclick="openPackage('Basic')">اختار</button>
-</div>
-
-<div class="card glass">
-<h3>Pro</h3>
-<div class="price">5$</div>
-<p>سكشنات + موسيقى + تجربة أقوى</p>
-<button class="btn btn-primary" onclick="openPackage('Pro')">اختار</button>
-</div>
-
-<div class="card glass">
-<h3>VIP</h3>
-<div class="price">10$</div>
-<p>تجربة كاملة + قفل سري + صفحات متعددة</p>
-<button class="btn btn-secondary" onclick="openPackage('VIP')">اختار</button>
-</div>
-
-</div>
-</section>
-
-<!-- TESTIMONIAL -->
-<section>
-<h2 class="section-title">تجارب حقيقية</h2>
-<div class="testimonial glass">“والله دمعت لما فتحته”</div>
-<div class="testimonial glass">“أفضل هدية سويتها”</div>
-<div class="testimonial glass">“فكرة مجنونة حرفياً”</div>
-</section>
-
-<!-- FAQ -->
-<section>
-<h2 class="section-title">أسئلة شائعة</h2>
-
-<div class="faq-item" onclick="toggleFAQ(this)">
-شنو تحتاج مني؟
-<div class="faq-answer">صور + رسالة وانا اسوي كلشي</div>
-</div>
-
-<div class="faq-item" onclick="toggleFAQ(this)">
-كم الوقت؟
-<div class="faq-answer">غالباً خلال نفس اليوم</div>
-</div>
-
-<div class="faq-item" onclick="toggleFAQ(this)">
-هل الرابط دائم؟
-<div class="faq-answer">اي يبقى دائم</div>
+<div class="video-box">
+<iframe height="300"
+src="https://www.youtube.com/embed/Pv5fM8gBL5s"
+allowfullscreen></iframe>
 </div>
 
 </section>
 
-<!-- FORM -->
-<section>
-<h2 class="section-title">اطلب هديتك</h2>
+<!-- PRICING -->
+<section style="padding:40px">
+<h2>الباقات</h2>
 
-<input id="name" placeholder="اسمك">
-<input id="to" placeholder="اسم الشخص">
-<select id="type">
-<option>حب</option>
-<option>عيد ميلاد</option>
-<option>ذكرى</option>
-</select>
-<textarea id="note" placeholder="تفاصيل اضافية"></textarea>
+<div>
 
-<button class="btn btn-primary" style="width:100%" onclick="sendForm()">ارسال الطلب</button>
+<button class="btn btn-secondary" onclick="orderWhatsApp('basic')">Basic - 3$</button><br><br>
+<button class="btn btn-primary" onclick="orderWhatsApp('pro')">Pro - 5$</button><br><br>
+<button class="btn btn-secondary" onclick="orderWhatsApp('vip')">VIP - 10$</button>
+
+</div>
+
 </section>
 
 <!-- CONTACT -->
-<section>
-<h2 class="section-title">تواصل</h2>
+<section id="contact" style="padding:40px">
+<h2>التواصل</h2>
 
-<div class="contact-links">
-<a href="https://wa.me/9647770998885">واتساب</a>
-<a href="https://instagram.com/luvra.iq">انستقرام</a>
-<a href="https://tiktok.com/@luvra.iq">تيك توك</a>
-</div>
+<p>واتساب / انستغرام / تيك توك</p>
 
 </section>
 
-<a class="wa" id="waFloat" href="#">واتساب</a>
+<!-- زر واتساب -->
+<a class="wa-float" href="https://wa.me/9647770998885" target="_blank">
+راسلني واتساب
+</a>
 
 <script>
 
-const number="9647770998885";
+/* نظام الطلب الذكي */
+function orderWhatsApp(type){
 
-function wa(msg){
-return `https://wa.me/${number}?text=${encodeURIComponent(msg)}`;
+let msg = "";
+
+if(type === "basic"){
+msg = "هلا، اريد اطلب باقة Basic (3$)%0A%0Aالتفاصيل:%0A- الاسم:%0A- الرسالة:%0A- الصور:";
 }
 
-function openGeneral(){
-window.open(wa("هلاو، أريد أطلب هدية من Luvra"),"_blank");
+if(type === "pro"){
+msg = "هلا، اريد اطلب باقة Pro (5$)%0A%0Aالتفاصيل:%0A- الاسم:%0A- الرسالة:%0A- الصور:%0A- موسيقى:";
 }
 
-function openPackage(p){
-window.open(wa(`أريد باقة ${p}`),"_blank");
+if(type === "vip"){
+msg = "هلا، اريد اطلب باقة VIP (10$)%0A%0Aالتفاصيل:%0A- الاسم:%0A- القصة:%0A- صور كثيرة:%0A- فكرة خاصة:";
 }
 
-function sendForm(){
-const name=document.getElementById("name").value;
-const to=document.getElementById("to").value;
-const type=document.getElementById("type").value;
-const note=document.getElementById("note").value;
-
-const msg=`طلب هدية من Luvra
-
-الاسم: ${name}
-للشخص: ${to}
-المناسبة: ${type}
-تفاصيل: ${note}`;
-
-window.open(wa(msg),"_blank");
+window.open("https://wa.me/9647770998885?text=" + msg, "_blank");
 }
 
-function toggleFAQ(el){
-const ans=el.querySelector(".faq-answer");
-ans.style.display=ans.style.display==="block"?"none":"block";
+/* سكرول */
+function scrollToContact(){
+document.getElementById("contact").scrollIntoView({behavior:"smooth"});
 }
-
-/* HEARTS */
-const container=document.getElementById("hearts");
-for(let i=0;i<80;i++){
-let h=document.createElement("div");
-h.className="heart";
-h.innerHTML="❤";
-h.style.left=Math.random()*100+"vw";
-h.style.fontSize=(10+Math.random()*20)+"px";
-h.style.animationDuration=(8+Math.random()*10)+"s";
-container.appendChild(h);
-}
-
-document.getElementById("waFloat").href=wa("أريد أطلب هدية");
 
 </script>
 
