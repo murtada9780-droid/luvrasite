@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Luvra | هدية رقمية فخمة</title>
 
+<!-- SEO -->
+<meta name="description" content="اصنع هدية رقمية فخمة لشخص تحبه — موقع كامل يحتوي رسالة، صور، موسيقى وتجربة سينمائية">
+
 <style>
 
 /* ================= RESET ================= */
@@ -15,7 +18,6 @@ box-sizing:border-box;
 font-family:'Segoe UI',sans-serif;
 }
 
-/* ================= BODY ================= */
 body{
 background:radial-gradient(circle at top,#1a0826,#050508);
 color:#fff;
@@ -65,13 +67,13 @@ padding:20px;
 }
 
 .hero h1{
-font-size:48px;
+font-size:52px;
 margin-bottom:15px;
 }
 
 .hero p{
 max-width:650px;
-opacity:.8;
+opacity:.85;
 margin-bottom:25px;
 }
 
@@ -82,7 +84,10 @@ border-radius:30px;
 border:none;
 cursor:pointer;
 font-weight:bold;
+transition:.3s;
 }
+
+.btn:hover{transform:scale(1.05)}
 
 .btn-primary{
 background:#c084fc;
@@ -104,7 +109,7 @@ margin:auto;
 
 .section-title{
 text-align:center;
-font-size:30px;
+font-size:32px;
 margin-bottom:35px;
 }
 
@@ -124,6 +129,16 @@ gap:20px;
 }
 
 .feature{
+padding:25px;
+}
+
+/* ================= HOW ================= */
+.steps{
+display:grid;
+gap:20px;
+}
+
+.step{
 padding:20px;
 }
 
@@ -140,12 +155,10 @@ text-align:center;
 transition:0.3s;
 }
 
-.card:hover{
-transform:translateY(-5px);
-}
+.card:hover{transform:translateY(-5px)}
 
 .price{
-font-size:30px;
+font-size:32px;
 color:#c084fc;
 margin:15px 0;
 }
@@ -216,7 +229,7 @@ z-index:0;
 .heart{
 position:absolute;
 color:#ff4d6d;
-opacity:0.3;
+opacity:0.25;
 animation:float 12s linear infinite;
 }
 
@@ -229,6 +242,7 @@ animation:float 12s linear infinite;
 @media(min-width:768px){
 .features{grid-template-columns:1fr 1fr}
 .packages{grid-template-columns:1fr 1fr 1fr}
+.steps{grid-template-columns:1fr 1fr 1fr}
 .hero h1{font-size:60px}
 }
 
@@ -244,22 +258,35 @@ animation:float 12s linear infinite;
 <a href="#" class="nav-btn" onclick="openGeneral()">اطلب الآن</a>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
 <h1>مو مجرد هدية… تجربة كاملة</h1>
-<p>نسوي لك موقع خاص يخلي الشخص يعيش لحظة ما ينساها</p>
+<p>نسوي لك موقع خاص يخلي الشخص يعيش لحظة ما ينساها — رسالة، صور، موسيقى، وكل شي يمشي كأنه فيلم بينكم</p>
 <button class="btn btn-primary" onclick="openGeneral()">ابدأ الآن</button>
 </section>
 
+<!-- WHY -->
 <section>
 <h2 class="section-title">ليش Luvra ؟</h2>
 <div class="features">
-<div class="feature glass">تجربة سينمائية</div>
-<div class="feature glass">تصميم خاص لكل طلب</div>
+<div class="feature glass">تجربة سينمائية مو موجودة بأي هدية</div>
+<div class="feature glass">تصميم خاص لكل طلب مو قالب جاهز</div>
 <div class="feature glass">رابط خاص وسري</div>
-<div class="feature glass">تسليم سريع</div>
+<div class="feature glass">تسليم سريع جداً</div>
 </div>
 </section>
 
+<!-- HOW -->
+<section>
+<h2 class="section-title">شلون يشتغل الطلب ؟</h2>
+<div class="steps">
+<div class="step glass">تتواصل ويانا</div>
+<div class="step glass">ترسل التفاصيل</div>
+<div class="step glass">نجهز الموقع ونرسله</div>
+</div>
+</section>
+
+<!-- PACKAGES -->
 <section>
 <h2 class="section-title">الباقات</h2>
 
@@ -275,51 +302,66 @@ animation:float 12s linear infinite;
 <div class="card glass">
 <h3>Pro</h3>
 <div class="price">5$</div>
-<p>سكشنات + موسيقى</p>
+<p>سكشنات + موسيقى + تجربة أقوى</p>
 <button class="btn btn-primary" onclick="openPackage('Pro')">اختار</button>
 </div>
 
 <div class="card glass">
 <h3>VIP</h3>
 <div class="price">10$</div>
-<p>تجربة كاملة + قفل</p>
+<p>تجربة كاملة + قفل سري + صفحات متعددة</p>
 <button class="btn btn-secondary" onclick="openPackage('VIP')">اختار</button>
 </div>
 
 </div>
 </section>
 
+<!-- TESTIMONIAL -->
 <section>
-<h2 class="section-title">تجارب</h2>
-<div class="testimonial glass">“والله دمعت”</div>
-<div class="testimonial glass">“أفضل هدية”</div>
+<h2 class="section-title">تجارب حقيقية</h2>
+<div class="testimonial glass">“والله دمعت لما فتحته”</div>
+<div class="testimonial glass">“أفضل هدية سويتها”</div>
+<div class="testimonial glass">“فكرة مجنونة حرفياً”</div>
 </section>
 
+<!-- FAQ -->
 <section>
-<h2 class="section-title">FAQ</h2>
+<h2 class="section-title">أسئلة شائعة</h2>
 
 <div class="faq-item" onclick="toggleFAQ(this)">
-شنو تحتاج؟
-<div class="faq-answer">صور + رسالة</div>
+شنو تحتاج مني؟
+<div class="faq-answer">صور + رسالة وانا اسوي كلشي</div>
 </div>
 
 <div class="faq-item" onclick="toggleFAQ(this)">
 كم الوقت؟
-<div class="faq-answer">خلال ساعات</div>
+<div class="faq-answer">غالباً خلال نفس اليوم</div>
+</div>
+
+<div class="faq-item" onclick="toggleFAQ(this)">
+هل الرابط دائم؟
+<div class="faq-answer">اي يبقى دائم</div>
 </div>
 
 </section>
 
+<!-- FORM -->
 <section>
-<h2 class="section-title">اطلب</h2>
+<h2 class="section-title">اطلب هديتك</h2>
 
 <input id="name" placeholder="اسمك">
 <input id="to" placeholder="اسم الشخص">
-<textarea id="note" placeholder="تفاصيل"></textarea>
+<select id="type">
+<option>حب</option>
+<option>عيد ميلاد</option>
+<option>ذكرى</option>
+</select>
+<textarea id="note" placeholder="تفاصيل اضافية"></textarea>
 
-<button class="btn btn-primary" style="width:100%" onclick="sendForm()">ارسال</button>
+<button class="btn btn-primary" style="width:100%" onclick="sendForm()">ارسال الطلب</button>
 </section>
 
+<!-- CONTACT -->
 <section>
 <h2 class="section-title">تواصل</h2>
 
@@ -342,7 +384,7 @@ return `https://wa.me/${number}?text=${encodeURIComponent(msg)}`;
 }
 
 function openGeneral(){
-window.open(wa("هلاو أريد أطلب هدية"),"_blank");
+window.open(wa("هلاو، أريد أطلب هدية من Luvra"),"_blank");
 }
 
 function openPackage(p){
@@ -352,13 +394,15 @@ window.open(wa(`أريد باقة ${p}`),"_blank");
 function sendForm(){
 const name=document.getElementById("name").value;
 const to=document.getElementById("to").value;
+const type=document.getElementById("type").value;
 const note=document.getElementById("note").value;
 
-const msg=`طلب هدية
+const msg=`طلب هدية من Luvra
 
-${name}
-${to}
-${note}`;
+الاسم: ${name}
+للشخص: ${to}
+المناسبة: ${type}
+تفاصيل: ${note}`;
 
 window.open(wa(msg),"_blank");
 }
@@ -368,8 +412,9 @@ const ans=el.querySelector(".faq-answer");
 ans.style.display=ans.style.display==="block"?"none":"block";
 }
 
+/* HEARTS */
 const container=document.getElementById("hearts");
-for(let i=0;i<60;i++){
+for(let i=0;i<80;i++){
 let h=document.createElement("div");
 h.className="heart";
 h.innerHTML="❤";
@@ -379,7 +424,7 @@ h.style.animationDuration=(8+Math.random()*10)+"s";
 container.appendChild(h);
 }
 
-document.getElementById("waFloat").href=wa("طلب هدية");
+document.getElementById("waFloat").href=wa("أريد أطلب هدية");
 
 </script>
 
