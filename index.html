@@ -6,7 +6,7 @@
 <title>Luvra | هدية رقمية فخمة</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
 body{
 background:radial-gradient(circle at top,#1a0826,#050508);
 color:#fff;
@@ -22,7 +22,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 20px;
-background:rgba(0,0,0,0.5);
+background:rgba(0,0,0,0.6);
 backdrop-filter:blur(12px);
 z-index:999;
 }
@@ -30,8 +30,8 @@ z-index:999;
 .nav-btn{
 background:#c084fc;
 color:#000;
-padding:8px 16px;
-border-radius:20px;
+padding:10px 18px;
+border-radius:25px;
 text-decoration:none;
 font-weight:bold;
 }
@@ -45,17 +45,15 @@ justify-content:center;
 align-items:center;
 text-align:center;
 padding:20px;
-position:relative;
-z-index:2;
 }
 .hero h1{
 font-size:48px;
 margin-bottom:15px;
 }
 .hero p{
-opacity:.7;
-margin-bottom:20px;
+opacity:.8;
 max-width:600px;
+margin-bottom:20px;
 }
 .btn{
 padding:14px 22px;
@@ -67,7 +65,7 @@ font-weight:bold;
 .btn-primary{background:#c084fc;color:#000}
 .btn-secondary{background:#222;color:#fff;border:1px solid #555}
 
-/* HEARTS BG */
+/* HEARTS */
 #hearts{
 position:fixed;
 top:0;
@@ -75,12 +73,12 @@ left:0;
 width:100%;
 height:100%;
 pointer-events:none;
-z-index:1;
+z-index:0;
 }
 .heart{
 position:absolute;
 color:#ff4d6d;
-opacity:0.25;
+opacity:0.3;
 animation:float 12s linear infinite;
 }
 @keyframes float{
@@ -88,7 +86,7 @@ animation:float 12s linear infinite;
 100%{transform:translateY(-10vh)}
 }
 
-/* SECTIONS */
+/* SECTION */
 section{
 padding:100px 20px;
 max-width:1100px;
@@ -100,6 +98,15 @@ font-size:28px;
 margin-bottom:30px;
 }
 
+/* GLASS CARD */
+.card{
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(255,255,255,0.1);
+padding:25px;
+border-radius:25px;
+backdrop-filter:blur(12px);
+}
+
 /* FEATURES */
 .features{
 display:grid;
@@ -107,11 +114,10 @@ grid-template-columns:1fr;
 gap:20px;
 }
 .feature{
-background:rgba(255,255,255,0.03);
-border:1px solid rgba(255,255,255,0.1);
 padding:20px;
 border-radius:20px;
-backdrop-filter:blur(10px);
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(255,255,255,0.1);
 }
 
 /* PACKAGES */
@@ -120,23 +126,21 @@ display:grid;
 grid-template-columns:1fr;
 gap:20px;
 }
-.card{
-background:rgba(255,255,255,0.03);
-padding:25px;
-border-radius:25px;
-border:1px solid rgba(255,255,255,0.1);
-text-align:center;
-transition:0.3s;
+.price{
+font-size:30px;
+color:#c084fc;
+margin:15px 0;
 }
-.card:hover{transform:translateY(-5px)}
-.price{font-size:30px;color:#c084fc;margin:15px 0}
 
-/* STORY */
-.story{
-text-align:center;
-max-width:700px;
-margin:auto;
-opacity:.8;
+/* FAQ */
+.faq-item{
+margin-bottom:15px;
+cursor:pointer;
+}
+.faq-answer{
+display:none;
+opacity:.7;
+padding-top:10px;
 }
 
 /* FORM */
@@ -193,24 +197,17 @@ z-index:999;
 
 <section class="hero">
 <h1>مو مجرد هدية… تجربة كاملة</h1>
-<p>نصمم لك موقع خاص بالشخص اللي تحبه، يحتوي لحظاتكم، رسالتك، صوركم، موسيقى، وتجربة تخلي قلبه يوقف لحظة</p>
+<p>موقع خاص بالشخص اللي تحبه يحتوي رسالتك، صوركم، موسيقى، وتجربة تخليه يعيش لحظة ما ينساها</p>
 <button class="btn btn-primary" onclick="openGeneral()">ابدأ الآن</button>
 </section>
 
 <section>
-<h2 class="section-title">التجربة</h2>
-<p class="story">
-تخيل يفتح الرابط… شاشة سوداء… بعدها تظهر رسالتك… بعدها الصور… بعدها الموسيقى… وكل شي يمشي كأنه فيلم قصير بينكم
-</p>
-</section>
-
-<section>
-<h2 class="section-title">ليش Luvra ؟</h2>
+<h2 class="section-title">ليش الناس تختار Luvra ؟</h2>
 <div class="features">
-<div class="feature">تجربة سينمائية مو موجودة بأي هدية</div>
-<div class="feature">تصميم خاص لكل طلب</div>
-<div class="feature">رابط خاص وسري</div>
-<div class="feature">تسليم سريع جداً</div>
+<div class="feature">تجربة سينمائية مو موجودة بأي مكان</div>
+<div class="feature">كل هدية تصميم خاص مو قالب جاهز</div>
+<div class="feature">رابط خاص وسري لكل شخص</div>
+<div class="feature">تسليم سريع وبدقة عالية</div>
 </div>
 </section>
 
@@ -222,7 +219,7 @@ z-index:999;
 <div class="card">
 <h3>Basic</h3>
 <div class="price">3$</div>
-<p>صفحة بسيطة + رسالة + صور</p>
+<p>صفحة + رسالة + صور</p>
 <button class="btn btn-secondary" onclick="openPackage('Basic')">اختار</button>
 </div>
 
@@ -241,6 +238,32 @@ z-index:999;
 </div>
 
 </div>
+</section>
+
+<section>
+<h2 class="section-title">تجارب حقيقية</h2>
+<div class="card">“والله دمعت لما فتحته… ما توقعت هيج شي”</div>
+<div class="card" style="margin-top:15px">“أفضل هدية سويتها بحياتي”</div>
+</section>
+
+<section>
+<h2 class="section-title">أسئلة شائعة</h2>
+
+<div class="faq-item" onclick="toggleFAQ(this)">
+شنو تحتاج مني؟
+<div class="faq-answer">ترسل النص والصور وانا أسوي كلشي</div>
+</div>
+
+<div class="faq-item" onclick="toggleFAQ(this)">
+كم وقت التنفيذ؟
+<div class="faq-answer">غالباً بنفس اليوم او خلال ساعات</div>
+</div>
+
+<div class="faq-item" onclick="toggleFAQ(this)">
+هل الرابط يبقى؟
+<div class="faq-answer">اي نعم يبقى دائم</div>
+</div>
+
 </section>
 
 <section>
@@ -279,7 +302,7 @@ return `https://wa.me/${number}?text=${encodeURIComponent(msg)}`;
 }
 
 function openGeneral(){
-window.open(wa("هلاو، أريد أسوي هدية موقع مميزة من Luvra"),"_blank");
+window.open(wa("هلاو، أريد أطلب هدية من Luvra"),"_blank");
 }
 
 function openPackage(p){
@@ -296,7 +319,7 @@ const to=document.getElementById("to").value;
 const type=document.getElementById("type").value;
 const note=document.getElementById("note").value;
 
-const msg=`طلب هدية من Luvra
+const msg=`طلب هدية
 
 اسمي: ${name}
 للشخص: ${to}
@@ -306,15 +329,20 @@ const msg=`طلب هدية من Luvra
 window.open(wa(msg),"_blank");
 }
 
+function toggleFAQ(el){
+const ans=el.querySelector(".faq-answer");
+ans.style.display=ans.style.display==="block"?"none":"block";
+}
+
 /* HEARTS */
 const container=document.getElementById("hearts");
-for(let i=0;i<40;i++){
+for(let i=0;i<50;i++){
 let h=document.createElement("div");
 h.className="heart";
 h.innerHTML="❤";
 h.style.left=Math.random()*100+"vw";
 h.style.fontSize=(10+Math.random()*20)+"px";
-h.style.animationDuration=(8+Math.random()*8)+"s";
+h.style.animationDuration=(8+Math.random()*10)+"s";
 container.appendChild(h);
 }
 
