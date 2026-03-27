@@ -8,7 +8,7 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
 body{
-background:#0a0a0f;
+background:radial-gradient(circle at top,#1a0826,#050508);
 color:#fff;
 overflow-x:hidden;
 }
@@ -22,15 +22,11 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 20px;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(10px);
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(12px);
 z-index:999;
 }
-.logo{
-font-size:22px;
-font-weight:bold;
-color:#c084fc;
-}
+.logo{font-size:22px;font-weight:bold;color:#c084fc}
 .nav-btn{
 background:#c084fc;
 color:#000;
@@ -49,93 +45,118 @@ justify-content:center;
 align-items:center;
 text-align:center;
 padding:20px;
+position:relative;
+z-index:2;
 }
 .hero h1{
-font-size:38px;
-margin-bottom:10px;
+font-size:48px;
+margin-bottom:15px;
 }
 .hero p{
 opacity:.7;
 margin-bottom:20px;
+max-width:600px;
 }
 .btn{
-padding:12px 20px;
+padding:14px 22px;
 border-radius:30px;
 border:none;
 cursor:pointer;
 font-weight:bold;
 }
-.btn-primary{
-background:#c084fc;
-color:#000;
+.btn-primary{background:#c084fc;color:#000}
+.btn-secondary{background:#222;color:#fff;border:1px solid #555}
+
+/* HEARTS BG */
+#hearts{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:1;
 }
-.btn-secondary{
-background:#222;
-color:#fff;
-border:1px solid #555;
+.heart{
+position:absolute;
+color:#ff4d6d;
+opacity:0.25;
+animation:float 12s linear infinite;
+}
+@keyframes float{
+0%{transform:translateY(100vh)}
+100%{transform:translateY(-10vh)}
 }
 
-/* SECTION */
+/* SECTIONS */
 section{
-padding:80px 20px;
-max-width:1000px;
+padding:100px 20px;
+max-width:1100px;
 margin:auto;
 }
 .section-title{
-font-size:26px;
-margin-bottom:25px;
 text-align:center;
+font-size:28px;
+margin-bottom:30px;
 }
 
 /* FEATURES */
 .features{
 display:grid;
 grid-template-columns:1fr;
-gap:15px;
+gap:20px;
 }
 .feature{
-background:#111;
-padding:15px;
-border-radius:15px;
-border:1px solid #333;
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(255,255,255,0.1);
+padding:20px;
+border-radius:20px;
+backdrop-filter:blur(10px);
 }
 
 /* PACKAGES */
 .packages{
 display:grid;
 grid-template-columns:1fr;
-gap:15px;
+gap:20px;
 }
 .card{
-background:#111;
-padding:20px;
-border-radius:20px;
-border:1px solid #333;
+background:rgba(255,255,255,0.03);
+padding:25px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,0.1);
 text-align:center;
+transition:0.3s;
 }
-.price{
-font-size:26px;
-margin:10px 0;
-color:#c084fc;
+.card:hover{transform:translateY(-5px)}
+.price{font-size:30px;color:#c084fc;margin:15px 0}
+
+/* STORY */
+.story{
+text-align:center;
+max-width:700px;
+margin:auto;
+opacity:.8;
 }
 
 /* FORM */
 input,textarea,select{
 width:100%;
-padding:12px;
-margin:6px 0;
-border-radius:12px;
+padding:14px;
+margin:8px 0;
+border-radius:14px;
 border:none;
-background:#1a1a1a;
+background:#111;
 color:#fff;
 }
 
 /* CONTACT */
 .contact-links a{
 display:block;
-margin:10px 0;
+margin:12px 0;
 color:#c084fc;
 text-decoration:none;
+font-size:18px;
 }
 
 /* FLOAT WA */
@@ -149,35 +170,14 @@ padding:14px 18px;
 border-radius:50px;
 font-weight:bold;
 text-decoration:none;
-}
-
-/* HEARTS */
-#hearts{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-pointer-events:none;
-overflow:hidden;
-z-index:0;
-}
-.heart{
-position:absolute;
-color:#ff4d6d;
-opacity:0.3;
-animation:float 15s linear infinite;
-}
-@keyframes float{
-0%{transform:translateY(100vh)}
-100%{transform:translateY(-10vh)}
+z-index:999;
 }
 
 /* MOBILE */
 @media(min-width:768px){
 .features{grid-template-columns:1fr 1fr}
 .packages{grid-template-columns:1fr 1fr 1fr}
-.hero h1{font-size:48px}
+.hero h1{font-size:60px}
 }
 </style>
 </head>
@@ -192,18 +192,25 @@ animation:float 15s linear infinite;
 </nav>
 
 <section class="hero">
-<h1>سوي هدية تخلي الشخص ينبهر</h1>
-<p>موقع كامل خاص بالشخص اللي تحبه يحتوي صور + رسالة + موسيقى وتجربة ما تتنسي</p>
-<button class="btn btn-primary" onclick="openGeneral()">اطلب هديتك الآن</button>
+<h1>مو مجرد هدية… تجربة كاملة</h1>
+<p>نصمم لك موقع خاص بالشخص اللي تحبه، يحتوي لحظاتكم، رسالتك، صوركم، موسيقى، وتجربة تخلي قلبه يوقف لحظة</p>
+<button class="btn btn-primary" onclick="openGeneral()">ابدأ الآن</button>
+</section>
+
+<section>
+<h2 class="section-title">التجربة</h2>
+<p class="story">
+تخيل يفتح الرابط… شاشة سوداء… بعدها تظهر رسالتك… بعدها الصور… بعدها الموسيقى… وكل شي يمشي كأنه فيلم قصير بينكم
+</p>
 </section>
 
 <section>
 <h2 class="section-title">ليش Luvra ؟</h2>
 <div class="features">
-<div class="feature">تجربة فخمة مو مجرد رسالة</div>
-<div class="feature">رابط خاص لكل شخص</div>
+<div class="feature">تجربة سينمائية مو موجودة بأي هدية</div>
+<div class="feature">تصميم خاص لكل طلب</div>
+<div class="feature">رابط خاص وسري</div>
 <div class="feature">تسليم سريع جداً</div>
-<div class="feature">خصوصية كاملة</div>
 </div>
 </section>
 
@@ -215,14 +222,14 @@ animation:float 15s linear infinite;
 <div class="card">
 <h3>Basic</h3>
 <div class="price">3$</div>
-<p>صفحة + رسالة + صور</p>
+<p>صفحة بسيطة + رسالة + صور</p>
 <button class="btn btn-secondary" onclick="openPackage('Basic')">اختار</button>
 </div>
 
 <div class="card">
 <h3>Pro</h3>
 <div class="price">5$</div>
-<p>سكشنات + موسيقى + تجربة أقوى</p>
+<p>سكشنات + موسيقى + تجربة اقوى</p>
 <button class="btn btn-primary" onclick="openPackage('Pro')">اختار</button>
 </div>
 
@@ -234,13 +241,6 @@ animation:float 15s linear infinite;
 </div>
 
 </div>
-</section>
-
-<section>
-<h2 class="section-title">شلون يشتغل الطلب</h2>
-<p style="text-align:center;opacity:.7">
-تتواصل ويانا → ترسل التفاصيل → نجهز الموقع → نرسل الرابط جاهز
-</p>
 </section>
 
 <section>
@@ -269,7 +269,7 @@ animation:float 15s linear infinite;
 
 </section>
 
-<a class="wa" id="waFloat" href="#" target="_blank">واتساب</a>
+<a class="wa" id="waFloat" href="#">واتساب</a>
 
 <script>
 const number="9647770998885";
@@ -279,14 +279,14 @@ return `https://wa.me/${number}?text=${encodeURIComponent(msg)}`;
 }
 
 function openGeneral(){
-window.open(wa("هلاو، أريد أطلب هدية من Luvra"),"_blank");
+window.open(wa("هلاو، أريد أسوي هدية موقع مميزة من Luvra"),"_blank");
 }
 
 function openPackage(p){
 let msg="";
-if(p==="Basic") msg="هلاو، أريد أطلب باقة Basic (3$)";
-if(p==="Pro") msg="هلاو، أريد أطلب باقة Pro (5$)";
-if(p==="VIP") msg="هلاو، أريد أطلب باقة VIP (10$)";
+if(p==="Basic") msg="هلاو، أريد باقة Basic (3$)";
+if(p==="Pro") msg="هلاو، أريد باقة Pro (5$)";
+if(p==="VIP") msg="هلاو، أريد باقة VIP (10$)";
 window.open(wa(msg),"_blank");
 }
 
@@ -296,7 +296,7 @@ const to=document.getElementById("to").value;
 const type=document.getElementById("type").value;
 const note=document.getElementById("note").value;
 
-const msg=`هلاو، عندي طلب هدية
+const msg=`طلب هدية من Luvra
 
 اسمي: ${name}
 للشخص: ${to}
@@ -308,13 +308,13 @@ window.open(wa(msg),"_blank");
 
 /* HEARTS */
 const container=document.getElementById("hearts");
-for(let i=0;i<25;i++){
+for(let i=0;i<40;i++){
 let h=document.createElement("div");
 h.className="heart";
 h.innerHTML="❤";
 h.style.left=Math.random()*100+"vw";
 h.style.fontSize=(10+Math.random()*20)+"px";
-h.style.animationDuration=(10+Math.random()*10)+"s";
+h.style.animationDuration=(8+Math.random()*8)+"s";
 container.appendChild(h);
 }
 
