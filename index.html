@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Luvra | هدايا رقمية رومانسية</title>
   <meta name="description" content="Luvra - صفحة تعريفية احترافية لمشروع هدايا رقمية رومانسية مع نظام طلب ذكي يرسل كل التفاصيل مباشرة إلى واتساب." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,6 +37,8 @@
         radial-gradient(circle at 82% 80%, rgba(109,40,217,0.14), transparent 30%),
         linear-gradient(180deg, #06060b 0%, #0c0814 50%, #08080d 100%);
       overflow-x: hidden;
+      padding-top: 88px;
+      padding-bottom: 108px;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -83,13 +85,20 @@
     }
 
     .nav-wrap {
-      position: sticky;
+      position: fixed;
       top: 0;
+      right: 0;
+      left: 0;
       z-index: 40;
       background: rgba(6,6,11,0.72);
       border-bottom: 1px solid rgba(255,255,255,0.08);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
+      transition: transform .25s ease, background .25s ease;
+    }
+
+    .nav-wrap.nav-hidden {
+      transform: translateY(-100%);
     }
 
     .nav {
@@ -830,7 +839,7 @@
     .wa-float {
       position: fixed;
       left: 18px;
-      bottom: 18px;
+      bottom: max(18px, env(safe-area-inset-bottom));
       z-index: 45;
       padding: 14px 18px;
       border-radius: 999px;
@@ -838,9 +847,32 @@
       color: white;
       font-weight: 900;
       box-shadow: 0 14px 34px rgba(13,167,101,.28);
+      transition: transform .25s ease, opacity .25s ease, bottom .25s ease;
+    }
+
+    .wa-float.is-hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(16px);
     }
 
     .copy-btn { font-size: .95rem; }
+
+    #about,
+    #video,
+    #packages,
+    #demos,
+    #order,
+    #reviews,
+    #contact {
+      scroll-margin-top: 110px;
+    }
+
+    input,
+    textarea,
+    select {
+      font-size: 16px !important;
+    }
 
     footer {
       padding: 10px 0 36px;
@@ -864,9 +896,25 @@
     }
 
     @media (max-width: 760px) {
-      .nav { flex-direction: column; }
-      .nav-links { justify-content: center; }
-      .hero { padding-top: 44px; }
+      body {
+        padding-top: 132px;
+        padding-bottom: 112px;
+      }
+
+      .nav {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+        min-height: auto;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 12px 18px;
+      }
+
+      .hero { padding-top: 18px; }
       .grid-4,
       .pricing,
       .demo-grid,
@@ -877,7 +925,17 @@
       .cta { flex-direction: column; align-items: start; }
       .screen { min-height: 380px; }
       .floating-panel { width: 100%; }
-      .wa-float { left: 12px; right: 12px; bottom: 12px; justify-content: center; display: flex; }
+      .wa-float {
+        left: 12px;
+        right: 12px;
+        bottom: max(12px, env(safe-area-inset-bottom));
+        justify-content: center;
+        display: flex;
+      }
+
+      .video-frame {
+        min-height: 220px;
+      }
     }
   </style>
 </head>
@@ -1439,32 +1497,15 @@
     const packageConfig = {
       basic: {
         name: 'Basic',
-        features: [
-          'رسالة رئيسية',
-          'صور',
-          'موسيقى',
-          'تصميم أنيق وبسيط'
-        ]
+        features: ['رسالة رئيسية', 'صور', 'موسيقى', 'تصميم أنيق وبسيط']
       },
       pro: {
         name: 'Pro',
-        features: [
-          'رسالة مقسمة إلى سكشنات',
-          'ذكريات مع تواريخ',
-          'صور + موسيقى',
-          'كلمة سر + جواب',
-          'رسالة مخفية'
-        ]
+        features: ['رسالة مقسمة إلى سكشنات', 'ذكريات مع تواريخ', 'صور + موسيقى', 'كلمة سر + جواب', 'رسالة مخفية']
       },
       vip: {
         name: 'VIP',
-        features: [
-          'كل مميزات Pro',
-          'تايم لاين كامل',
-          'عداد للعلاقة',
-          'عداد للمفاجأة القادمة',
-          'تجربة أفخم ومخصصة أكثر'
-        ]
+        features: ['كل مميزات Pro', 'تايم لاين كامل', 'عداد للعلاقة', 'عداد للمفاجأة القادمة', 'تجربة أفخم ومخصصة أكثر']
       }
     };
 
@@ -1474,30 +1515,18 @@
     const statusBox = document.getElementById('statusBox');
     const form = document.getElementById('orderForm');
     const clearFormBtn = document.getElementById('clearFormBtn');
+    const navWrap = document.querySelector('.nav-wrap');
+    const waFloat = document.querySelector('.wa-float');
 
     function setPackage(selected) {
-      packageButtons.forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.package === selected);
-      });
-
+      packageButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.package === selected));
       packageNameInput.value = packageConfig[selected].name;
-      featureList.innerHTML = packageConfig[selected].features
-        .map(item => `<div>• ${item}</div>`)
-        .join('');
-
-      document.querySelectorAll('.pro-vip-only').forEach(el => {
-        el.classList.toggle('hidden', selected === 'basic');
-      });
-
-      document.querySelectorAll('.vip-only').forEach(el => {
-        el.classList.toggle('hidden', selected !== 'vip');
-      });
+      featureList.innerHTML = packageConfig[selected].features.map(item => `<div>• ${item}</div>`).join('');
+      document.querySelectorAll('.pro-vip-only').forEach(el => el.classList.toggle('hidden', selected === 'basic'));
+      document.querySelectorAll('.vip-only').forEach(el => el.classList.toggle('hidden', selected !== 'vip'));
     }
 
-    packageButtons.forEach(btn => {
-      btn.addEventListener('click', () => setPackage(btn.dataset.package));
-    });
-
+    packageButtons.forEach(btn => btn.addEventListener('click', () => setPackage(btn.dataset.package)));
     setPackage('basic');
 
     function textValue(id) {
@@ -1521,7 +1550,6 @@
       const surpriseDate = textValue('surpriseDate');
       const surpriseTitle = textValue('surpriseTitle');
       const extraNotes = textValue('extraNotes');
-
       const lines = [];
       lines.push('طلب جديد من موقع Luvra');
       lines.push('');
@@ -1531,46 +1559,21 @@
       lines.push('');
       lines.push('الرسالة الرئيسية:');
       lines.push(mainMessage || '-');
-
-      if (basicImages) {
-        lines.push('');
-        lines.push('الصور / وصف الصور:');
-        lines.push(basicImages);
-      }
-
-      if (musicLink) {
-        lines.push('');
-        lines.push(`الموسيقى: ${musicLink}`);
-      }
-
+      if (basicImages) { lines.push(''); lines.push('الصور / وصف الصور:'); lines.push(basicImages); }
+      if (musicLink) { lines.push(''); lines.push(`الموسيقى: ${musicLink}`); }
       if (packageName !== 'Basic') {
-        lines.push('');
-        lines.push('الرسائل المقسمة إلى سكشنات:');
-        lines.push(sectionMessages || '-');
-        lines.push('');
-        lines.push('الذكريات مع التواريخ:');
-        lines.push(memories || '-');
-        lines.push('');
-        lines.push(`كلمة السر / السؤال السري: ${secretQuestion || '-'}`);
+        lines.push(''); lines.push('الرسائل المقسمة إلى سكشنات:'); lines.push(sectionMessages || '-');
+        lines.push(''); lines.push('الذكريات مع التواريخ:'); lines.push(memories || '-');
+        lines.push(''); lines.push(`كلمة السر / السؤال السري: ${secretQuestion || '-'}`);
         lines.push(`الجواب: ${secretAnswer || '-'}`);
-        lines.push('');
-        lines.push('الرسالة المخفية:');
-        lines.push(hiddenMessage || '-');
+        lines.push(''); lines.push('الرسالة المخفية:'); lines.push(hiddenMessage || '-');
       }
-
       if (packageName === 'VIP') {
-        lines.push('');
-        lines.push(`تاريخ بداية العلاقة: ${relationshipDate || '-'}`);
+        lines.push(''); lines.push(`تاريخ بداية العلاقة: ${relationshipDate || '-'}`);
         lines.push(`تاريخ ووقت المفاجأة: ${surpriseDate || '-'}`);
         lines.push(`اسم المفاجأة: ${surpriseTitle || '-'}`);
       }
-
-      if (extraNotes) {
-        lines.push('');
-        lines.push('ملاحظات إضافية:');
-        lines.push(extraNotes);
-      }
-
+      if (extraNotes) { lines.push(''); lines.push('ملاحظات إضافية:'); lines.push(extraNotes); }
       return lines.join('\n');
     }
 
@@ -1578,17 +1581,14 @@
       e.preventDefault();
       statusBox.className = 'status-box';
       statusBox.textContent = '';
-
       const senderName = textValue('senderName');
       const receiverName = textValue('receiverName');
       const mainMessage = textValue('mainMessage');
-
       if (!senderName || !receiverName || !mainMessage) {
         statusBox.className = 'status-box error';
         statusBox.textContent = 'لازم تملأ اسم المرسل واسم المستلم والرسالة الرئيسية أولاً.';
         return;
       }
-
       const message = createMessage();
       const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
       statusBox.className = 'status-box success';
@@ -1602,6 +1602,51 @@
       statusBox.className = 'status-box';
       statusBox.textContent = '';
     });
+
+    let lastScrollY = window.scrollY;
+    let activeFocus = false;
+
+    function updateFloatingUI() {
+      if (activeFocus) {
+        navWrap.classList.add('nav-hidden');
+        waFloat.classList.add('is-hidden');
+        return;
+      }
+      navWrap.classList.remove('nav-hidden');
+      waFloat.classList.remove('is-hidden');
+    }
+
+    document.querySelectorAll('input, textarea, select').forEach(el => {
+      el.addEventListener('focus', () => {
+        activeFocus = true;
+        updateFloatingUI();
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 250);
+      });
+      el.addEventListener('blur', () => {
+        setTimeout(() => {
+          const current = document.activeElement;
+          activeFocus = current && ['INPUT', 'TEXTAREA', 'SELECT'].includes(current.tagName);
+          updateFloatingUI();
+        }, 120);
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      if (activeFocus) return;
+      const currentY = window.scrollY;
+      if (window.innerWidth <= 760) {
+        if (currentY > lastScrollY && currentY > 120) {
+          navWrap.classList.add('nav-hidden');
+        } else {
+          navWrap.classList.remove('nav-hidden');
+        }
+      }
+      lastScrollY = currentY;
+    }, { passive: true });
+
+    updateFloatingUI();
   </script>
 </body>
 </html>
