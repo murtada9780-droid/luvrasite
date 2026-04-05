@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Luvra | هدايا رقمية رومانسية</title>
-  <meta name="description" content="Luvra - صفحة تعريفية احترافية لمشروع هدايا رقمية رومانسية مع نظام طلب ذكي يرسل كل التفاصيل مباشرة إلى واتساب." />
+  <title>Luvra | هدايا رقمية عاطفية فخمة</title>
+  <meta name="description" content="Luvra يحوّل رسائلك وصورك وذكرياتك وأغانيك إلى هدية رقمية عاطفية فخمة بتجربة تفاعلية أنيقة." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #06060b;
@@ -27,6 +27,7 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: 'Cairo', sans-serif;
@@ -116,6 +117,7 @@
       gap: 12px;
       font-weight: 900;
       font-size: 1.14rem;
+      letter-spacing: .01em;
     }
 
     .brand-logo {
@@ -136,6 +138,7 @@
       flex-wrap: wrap;
       color: var(--muted);
       font-weight: 700;
+      font-size: .95rem;
     }
 
     .nav-links a:hover { color: #fff; }
@@ -153,6 +156,7 @@
       cursor: pointer;
       transition: transform .25s ease, background .25s ease, opacity .25s ease;
       white-space: nowrap;
+      text-align: center;
     }
 
     .btn:hover { transform: translateY(-2px); }
@@ -205,7 +209,7 @@
     h1 {
       margin: 0 0 16px;
       font-size: clamp(2.4rem, 5vw, 4.8rem);
-      line-height: 1.1;
+      line-height: 1.08;
       font-weight: 900;
       letter-spacing: -0.03em;
     }
@@ -213,7 +217,7 @@
     .hero p {
       margin: 0 0 24px;
       color: var(--muted);
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       line-height: 2;
       max-width: 720px;
     }
@@ -276,7 +280,10 @@
 
     .dots { display: flex; gap: 6px; }
     .dots span {
-      width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,0.28);
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.28);
     }
 
     .screen {
@@ -319,7 +326,7 @@
       font-size: 2rem;
       line-height: 1.25;
       font-weight: 900;
-      max-width: 320px;
+      max-width: 360px;
       position: relative;
       z-index: 1;
     }
@@ -327,7 +334,7 @@
     .screen-text {
       margin-top: 12px;
       color: #d8cff1;
-      max-width: 340px;
+      max-width: 360px;
       line-height: 1.9;
       position: relative;
       z-index: 1;
@@ -365,6 +372,7 @@
       margin: 0 0 10px;
       font-size: clamp(1.7rem, 3vw, 2.6rem);
       font-weight: 900;
+      letter-spacing: -.02em;
     }
 
     .section-head p {
@@ -518,41 +526,27 @@
 
     .demo-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr;
       gap: 18px;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     .demo-card {
-      border-radius: 26px;
+      border-radius: 28px;
       overflow: hidden;
     }
 
     .demo-media {
-      min-height: 220px;
+      min-height: 260px;
       display: flex;
       align-items: end;
-      padding: 18px;
+      padding: 22px;
       background:
         linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.5)),
         radial-gradient(circle at 20% 20%, rgba(155,107,255,0.4), transparent 28%),
         radial-gradient(circle at 80% 25%, rgba(255,103,184,0.3), transparent 25%),
         linear-gradient(135deg, #171124, #0e0b15);
-    }
-
-    .demo-media.two {
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.5)),
-        radial-gradient(circle at 25% 18%, rgba(240,202,130,0.32), transparent 26%),
-        radial-gradient(circle at 82% 78%, rgba(155,107,255,0.26), transparent 25%),
-        linear-gradient(135deg, #171112, #0f0a10);
-    }
-
-    .demo-media.three {
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.5)),
-        radial-gradient(circle at 65% 18%, rgba(255,103,184,0.28), transparent 26%),
-        radial-gradient(circle at 20% 82%, rgba(155,107,255,0.24), transparent 24%),
-        linear-gradient(135deg, #140e19, #0b0a11);
     }
 
     .demo-tag {
@@ -567,8 +561,8 @@
       font-weight: 800;
     }
 
-    .demo-title { font-size: 1.42rem; font-weight: 900; }
-    .demo-body { padding: 18px; color: var(--muted); line-height: 1.9; }
+    .demo-title { font-size: 1.58rem; font-weight: 900; }
+    .demo-body { padding: 20px; color: var(--muted); line-height: 1.95; }
 
     .trust-grid {
       display: grid;
@@ -587,7 +581,7 @@
       margin-top: 16px;
     }
 
-    .trust-item, .check-item {
+    .trust-item {
       display: flex;
       gap: 12px;
       align-items: start;
@@ -804,6 +798,13 @@
       color: #ffe2ea;
     }
 
+    .status-box.info {
+      display: block;
+      background: rgba(155,107,255,0.12);
+      border: 1px solid rgba(155,107,255,0.28);
+      color: #efe4ff;
+    }
+
     .order-summary {
       display: grid;
       gap: 12px;
@@ -822,6 +823,75 @@
     }
 
     .summary-item small { color: var(--muted); }
+
+    .channel-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .channel-option {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      cursor: pointer;
+      transition: .25s ease;
+      text-align: right;
+      color: #fff;
+    }
+
+    .channel-option:hover { transform: translateY(-2px); }
+    .channel-option.active {
+      border-color: rgba(155,107,255,0.65);
+      box-shadow: 0 0 0 3px rgba(155,107,255,0.14);
+      background: linear-gradient(180deg, rgba(155,107,255,0.12), rgba(255,255,255,0.03));
+    }
+
+    .channel-option strong {
+      font-size: .98rem;
+      font-weight: 800;
+    }
+
+    .channel-option span {
+      font-size: .84rem;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .preview-thumb {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04);
+      aspect-ratio: 1 / 1;
+    }
+
+    .preview-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .preview-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      margin-top: 8px;
+      margin-left: 8px;
+      color: var(--muted);
+      font-size: .88rem;
+    }
 
     .cta {
       margin: 30px 0 40px;
@@ -891,8 +961,7 @@
       }
       .grid-4 { grid-template-columns: repeat(2,1fr); }
       .steps { grid-template-columns: 1fr; }
-      .pricing,
-      .demo-grid { grid-template-columns: repeat(2,1fr); }
+      .pricing { grid-template-columns: repeat(2,1fr); }
     }
 
     @media (max-width: 760px) {
@@ -917,9 +986,9 @@
       .hero { padding-top: 18px; }
       .grid-4,
       .pricing,
-      .demo-grid,
       .package-switcher,
-      .order-grid { grid-template-columns: 1fr; }
+      .order-grid,
+      .channel-grid { grid-template-columns: 1fr; }
       .hero-actions,
       .hero-notes { flex-direction: column; align-items: stretch; }
       .cta { flex-direction: column; align-items: start; }
@@ -954,7 +1023,7 @@
         <a href="#about">عن المشروع</a>
         <a href="#video">المعاينة</a>
         <a href="#packages">الباقات</a>
-        <a href="#demos">النماذج</a>
+        <a href="#demos">النموذج</a>
         <a href="#order">الطلب الذكي</a>
         <a href="#contact">التواصل</a>
       </div>
@@ -969,23 +1038,23 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="pill">✨ مو مجرد رابط، هذا شعور كامل</div>
-          <h1>هديتك تصير <span class="accent">تجربة فخمة</span><br>بدل رسالة عادية</h1>
+          <div class="pill">✨ مو مجرد رابط — هذه تجربة عاطفية كاملة</div>
+          <h1>حوّل هديتك إلى <span class="accent">قصة فخمة</span><br>بدل رسالة عادية</h1>
           <p>
-            Luvra مشروع هدايا رقمية مخصص يحوّل الرسائل والصور والأغاني والذكريات إلى موقع تفاعلي أنيق.
-            الفكرة مو مجرد صفحة، الفكرة تجربة كاملة تخلي الهدية تبقى بالبال وتوصل الشعور بطريقة مختلفة.
+            Luvra يصنع هدايا رقمية مخصصة تحوّل رسائلك وذكرياتك وصورك وأغانيك إلى تجربة تفاعلية أنيقة ومؤثرة.
+            الفكرة مو مجرد صفحة. الفكرة هدية كاملة تحسس الطرف الثاني إن الموضوع معمول له هو تحديدًا.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#demos">شوف النماذج</a>
+            <a class="btn btn-primary" href="#demos">شوف النموذج</a>
             <a class="btn btn-secondary" href="#packages">شوف الباقات</a>
             <button class="btn btn-ghost copy-btn" onclick="copySiteLink()">نسخ رابط الموقع</button>
           </div>
 
           <div class="hero-notes">
             <span>🛡️ آمن بدون تسجيل دخول</span>
-            <span>💬 طلب مباشر وذكي</span>
-            <span>💜 مناسب للحب والمناسبات</span>
+            <span>💬 نظام طلب ذكي</span>
+            <span>💜 مناسب للحب والذكرى والمفاجآت المميزة</span>
           </div>
         </div>
 
@@ -998,8 +1067,8 @@
             <div class="screen">
               <div>
                 <div class="screen-badge">هدية خاصة ♥</div>
-                <div class="screen-title">تجربة تبقى<br>مو مجرد كلام</div>
-                <div class="screen-text">تصميم أنيق، رسالة مرتبة، صور، موسيقى، ذكريات، وقصة كاملة تخلي الهدية مميزة من أول ثانية.</div>
+                <div class="screen-title">هدية تحسها<br>تجربة كاملة</div>
+                <div class="screen-text">تصميم أنيق، رسائل مرتبة، صور، موسيقى، ذكريات، تفاصيل مخفية، وتجربة تبقى بالبال من أول ثانية.</div>
               </div>
               <div class="floating-panel">
                 <div class="line short"></div>
@@ -1017,29 +1086,29 @@
       <div class="container">
         <div class="section-head">
           <h2>شنو يميز المشروع؟</h2>
-          <p>هذه الصفحة تبني ثقة وتوضح الفكرة بسرعة. تصميم أنيق، شرح واضح، ونماذج حقيقية حتى يعرف الزبون شنو راح يستلم بالضبط.</p>
+          <p>هذه الصفحة معمولة حتى تبني ثقة، وتشرح الفكرة بسرعة، وتخلي الزبون يعرف بالضبط شنو راح يستلم. تصميم مرتب، إحساس فخم، وتجربة أقوى من أول زيارة.</p>
         </div>
 
         <div class="grid-4">
           <div class="card glass">
             <div class="icon">💌</div>
-            <h3>رسائل منسقة</h3>
-            <p>تقسيم الكلام إلى سكشنات مرتبة بدل نص طويل، حتى المشاعر توصل بشكل أجمل وأفخم.</p>
+            <h3>رسائل مرتبة</h3>
+            <p>كلامك ينقسم إلى سكشنات أنيقة بدل نص طويل، حتى يوصل الإحساس بطريقة أجمل وأقوى.</p>
           </div>
           <div class="card glass">
             <div class="icon">🖼️</div>
             <h3>صور وذكريات</h3>
-            <p>إضافة صور أو لحظات خاصة داخل تصميم يبرز التفاصيل بشكل ناعم ومريح للعين.</p>
+            <p>إضافة صور ولحظات خاصة داخل تصميم يبرز كل تفصيلة ويخليها أحلى وأغلى.</p>
           </div>
           <div class="card glass">
             <div class="icon">🎵</div>
             <h3>موسيقى ومود</h3>
-            <p>إمكانية إضافة أغنية أو أجواء خاصة تخلي الرابط يحس كأنه تجربة كاملة مو مجرد صفحة.</p>
+            <p>أغنية أو أجواء معينة تخلي الرابط يحس كأنه تجربة كاملة مو مجرد صفحة.</p>
           </div>
           <div class="card glass">
             <div class="icon">🔒</div>
-            <h3>أفكار مميزة</h3>
-            <p>مثل كلمة سر، رسالة مخفية، عداد للعلاقة، وعد تنازلي لمفاجأة قادمة حسب الباقة.</p>
+            <h3>إضافات مميزة</h3>
+            <p>مثل السؤال السري، الرسالة المخفية، عداد العلاقة، وعداد المفاجأة حسب الباقة.</p>
           </div>
         </div>
       </div>
@@ -1049,19 +1118,19 @@
       <div class="container">
         <div class="section-head">
           <h2>معاينة المشروع</h2>
-          <p>هذا فيديو سريع يوضح شكل الهدية وطريقة عرضها.</p>
+          <p>فيديو سريع يوضح شكل الهدية وإحساسها وطريقة عرضها.</p>
         </div>
 
         <div class="video-layout">
           <div class="video-box glass">
-            <iframe class="video-frame" src="https://www.youtube.com/embed/Pv5fM8gBL5s" title="Luvra Preview" allowfullscreen></iframe>
+            <iframe class="video-frame" src="https://www.youtube.com/embed/geN2L-snSqI" title="Luvra Preview" allowfullscreen></iframe>
           </div>
 
           <div class="small-info glass">
             <div class="check-list">
-              <div class="check-item"><div>✅</div><div><b>يبني الثقة</b>الفيديو يوضح للزبون إن المشروع حقيقي وتجربته واضحة.</div></div>
+              <div class="check-item"><div>✅</div><div><b>يبني الثقة بسرعة</b>الفيديو يوضح أن المشروع حقيقي ومرتب وسهل الفهم.</div></div>
               <div class="check-item"><div>✅</div><div><b>يسهّل البيع</b>الزائر يشوف النتيجة مباشرة بدل ما يتخيلها.</div></div>
-              <div class="check-item"><div>✅</div><div><b>مناسب للسوشال</b>نفس الاستعراض ينفع للنشر على إنستغرام وتيك توك.</div></div>
+              <div class="check-item"><div>✅</div><div><b>مناسب للسوشال</b>نفس طريقة العرض تنفع لتسويق تيك توك وإنستغرام.</div></div>
             </div>
           </div>
         </div>
@@ -1072,24 +1141,24 @@
       <div class="container">
         <div class="section-head">
           <h2>شلون يشتغل الطلب؟</h2>
-          <p>ثلاث خطوات بسيطة حتى أي شخص يطلب بسهولة.</p>
+          <p>ثلاث خطوات بسيطة حتى أي شخص يطلب بدون حوسة.</p>
         </div>
 
         <div class="steps">
           <div class="step glass">
             <div class="step-num">1</div>
             <h3>تختار الباقة</h3>
-            <p>كل باقة بيها مميزات محددة، وتختار الأنسب حسب مستوى الفخامة اللي تريده.</p>
+            <p>كل باقة بيها مستوى مختلف من التفاصيل والفخامة، وتختار الأنسب لفكرتك.</p>
           </div>
           <div class="step glass">
             <div class="step-num">2</div>
             <h3>تكتب التفاصيل</h3>
-            <p>اسم المرسل والمستلم، الرسائل، الذكريات، الصور، كلمة السر، وكل الإضافات المطلوبة.</p>
+            <p>تضيف الأسماء، الرسالة الرئيسية، الذكريات، التواريخ، الصور، الموسيقى، وأي فكرة خاصة تريدها.</p>
           </div>
           <div class="step glass">
             <div class="step-num">3</div>
-            <h3>ينرسل الطلب واتساب</h3>
-            <p>كل التفاصيل تنكتب تلقائيًا داخل رسالة مرتبة في واتساب حتى أبدأ بالتنفيذ مباشرة.</p>
+            <h3>تكمل على المنصة اللي تريدها</h3>
+            <p>النظام يرتب الطلب كامل حتى تكمل بسهولة عبر واتساب أو إنستغرام أو تيك توك.</p>
           </div>
         </div>
       </div>
@@ -1099,7 +1168,7 @@
       <div class="container">
         <div class="section-head">
           <h2>الباقات والأسعار</h2>
-          <p>كل باقة تختلف حسب مستوى الفخامة والتفاصيل والتجربة الكاملة.</p>
+          <p>كل باقة تختلف بمستوى التفاصيل والتخصيص والتأثير العاطفي.</p>
         </div>
 
         <div class="pricing">
@@ -1111,37 +1180,37 @@
               <li>رسالة رئيسية</li>
               <li>صور داخل الهدية</li>
               <li>موسيقى</li>
-              <li>تصميم أنيق وبسيط</li>
+              <li>تصميم أنيق ونظيف</li>
               <li>رابط خاص للمشاركة</li>
             </ul>
-            <a class="btn btn-secondary" style="width:100%" href="#order">اختيار هذي الباقة</a>
+            <a class="btn btn-secondary" style="width:100%" href="#order">اختيار هذه الباقة</a>
           </article>
 
           <article class="price-card glass popular">
             <div class="popular-badge">الأكثر طلبًا</div>
             <h3>Pro</h3>
-            <div class="price-sub">الخيار الأفضل للبيع</div>
+            <div class="price-sub">أفضل قيمة لهدية أقوى</div>
             <div class="price">$7 <small>/ هدية</small></div>
             <ul class="price-list">
               <li>رسالة مقسمة إلى سكشنات</li>
               <li>ذكريات مع تواريخ</li>
               <li>صور + موسيقى</li>
-              <li>كلمة سر + جواب</li>
+              <li>سؤال سري + جواب</li>
               <li>رسالة مخفية</li>
             </ul>
-            <a class="btn btn-primary" style="width:100%" href="#order">أفضل خيار للطلب</a>
+            <a class="btn btn-primary" style="width:100%" href="#order">أفضل باقة للطلب</a>
           </article>
 
           <article class="price-card glass">
             <h3>VIP</h3>
-            <div class="price-sub">للهدايا المميزة جدًا</div>
+            <div class="price-sub">لأكثر الهدايا تميزًا</div>
             <div class="price">$10 <small>/ هدية</small></div>
             <ul class="price-list">
               <li>كل مميزات Pro</li>
               <li>تايم لاين كامل</li>
               <li>عداد للعلاقة</li>
-              <li>عداد مفاجأة قادمة</li>
-              <li>تجربة أفخم ومخصصة أكثر</li>
+              <li>عداد للمفاجأة القادمة</li>
+              <li>تجربة أفخم وأكثر تخصيصًا</li>
             </ul>
             <a class="btn btn-secondary" style="width:100%" href="#order">للطلبات الفخمة</a>
           </article>
@@ -1152,47 +1221,21 @@
     <section id="demos">
       <div class="container">
         <div class="section-head">
-          <h2>النماذج والتجارب</h2>
-          <p>هذه نماذج مبسطة توضّح شكل كل باقة وطريقة عرضها.</p>
+          <h2>نموذج VIP</h2>
+          <p>نموذج واحد قوي يوضح أعلى مستوى من التفاصيل والإحساس. تقدر تضيف نماذج أكثر بعدين من الكود.</p>
         </div>
 
         <div class="demo-grid">
           <article class="demo-card glass">
             <div class="demo-media">
               <div>
-                <div class="demo-tag">هدية رقمية بسيطة</div>
-                <div class="demo-title">هدية رومانسية كلاسيكية</div>
+                <div class="demo-tag">تجربة هدية VIP عاطفية</div>
+                <div class="demo-title">قصة حب أغنى وأفخم بصريًا</div>
               </div>
             </div>
             <div class="demo-body">
-              نموذج برسالة أنيقة وصور وأجواء هادئة تناسب الهدايا العاطفية الكلاسيكية.<br><br>
-              <a class="btn btn-secondary" href="https://luvra-gift.vercel.app/gift/qamar-basic" target="_blank" rel="noopener noreferrer">عرض الهدية</a>
-            </div>
-          </article>
-
-          <article class="demo-card glass">
-            <div class="demo-media two">
-              <div>
-                <div class="demo-tag">هدية فخمة متعددة التفاصيل</div>
-                <div class="demo-title">ستايل أفخم مع موسيقى</div>
-              </div>
-            </div>
-            <div class="demo-body">
-              مثال على باقة VIP مع تجربة أغنى ومظهر أفخم وانتقالات أجمل.<br><br>
-              <a class="btn btn-secondary" href="https://luvra-gift.vercel.app/gift/qamar-vip" target="_blank" rel="noopener noreferrer">عرض الهدية</a>
-            </div>
-          </article>
-
-          <article class="demo-card glass">
-            <div class="demo-media three">
-              <div>
-                <div class="demo-tag">هدية بسؤال سري</div>
-                <div class="demo-title">هدية رومانسية تفاعلية</div>
-              </div>
-            </div>
-            <div class="demo-body">
-              نموذج لباقة Pro بتجربة أقوى ولمسة تفاعلية مميزة.<br><br>
-              <a class="btn btn-secondary" href="https://luvra-gift.vercel.app/gift/qamar-pro" target="_blank" rel="noopener noreferrer">عرض الهدية</a>
+              هذا المثال يوضح تجربة VIP بجو أقوى، وتنقلات أرتب، ورسائل مقسمة، وتفاصيل خاصة، وإحساس فخم أكثر.<br><br>
+              <a class="btn btn-secondary" href="https://luvra-gift.vercel.app/gift/qamar-vip" target="_blank" rel="noopener noreferrer">فتح نموذج VIP</a>
             </div>
           </article>
         </div>
@@ -1203,26 +1246,26 @@
       <div class="container">
         <div class="section-head">
           <h2>نظام الطلب الذكي</h2>
-          <p>اكتب تفاصيل الهدية كاملة، والنظام يرتبها ويرسلها مباشرة إلى واتساب بشكل جاهز وواضح.</p>
+          <p>اكتب تفاصيل الهدية مرة وحدة، والنظام يرتبها لك بشكل منظم حسب المنصة اللي تريد تكمل عليها.</p>
         </div>
 
         <div class="order-layout">
           <div class="order-card glass">
             <h3>ابدأ الطلب</h3>
-            <p>اختَر الباقة أولاً، وبعدها راح يظهر لك النظام المناسب لها تلقائيًا.</p>
+            <p>اختَر الباقة أولًا، وبعدها راح يتغير الفورم تلقائيًا حتى يطابق تفاصيل هذه الباقة.</p>
 
             <div class="package-switcher" id="packageSwitcher">
               <button type="button" class="package-option active" data-package="basic">
                 <strong>Basic</strong>
-                <span>رسالة + صور + موسيقى</span>
+                <span>رسالة رئيسية + صور + موسيقى</span>
               </button>
               <button type="button" class="package-option" data-package="pro">
                 <strong>Pro</strong>
-                <span>سكشنات + ذكريات + كلمة سر + رسالة مخفية</span>
+                <span>سكشنات + ذكريات + سؤال سري + رسالة مخفية</span>
               </button>
               <button type="button" class="package-option" data-package="vip">
                 <strong>VIP</strong>
-                <span>كل المميزات + عداد العلاقة + عداد المفاجأة</span>
+                <span>كل شيء + عداد العلاقة + عداد المفاجأة</span>
               </button>
             </div>
 
@@ -1235,7 +1278,7 @@
 
                 <div class="field">
                   <label for="receiverName">اسم المستلم</label>
-                  <input id="receiverName" name="receiverName" type="text" placeholder="مثال: براء" required>
+                  <input id="receiverName" name="receiverName" type="text" placeholder="مثال: مريم" required>
                 </div>
 
                 <div class="field full">
@@ -1250,8 +1293,16 @@
 
                 <div class="field full basic-only">
                   <label for="basicImages">روابط الصور أو وصف الصور</label>
-                  <textarea id="basicImages" name="basicImages" rows="3" placeholder="اكتب روابط الصور أو عدد الصور المطلوبة"></textarea>
-                  <div class="helper">هذا الحقل مناسب لكل الباقات، لكنه أساسي في Basic.</div>
+                  <textarea id="basicImages" name="basicImages" rows="3" placeholder="الصق روابط الصور أو اكتب شكد صورة تريد تضيف"></textarea>
+                  <div class="helper">هذا الحقل ينفع بكل الباقات، لكنه مهم أكثر في Basic.</div>
+                </div>
+
+                <div class="field full">
+                  <label for="giftImages">رفع صور الهدية</label>
+                  <input id="giftImages" name="giftImages" type="file" accept="image/*" multiple>
+                  <div class="helper">تقدر تختار أكثر من صورة، وراح تظهر معاينتها هنا قبل ما تكمل.</div>
+                  <div id="imageMeta" class="helper"></div>
+                  <div id="imagePreview" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:10px;margin-top:12px;"></div>
                 </div>
 
                 <div class="field full">
@@ -1259,23 +1310,34 @@
                   <input id="musicLink" name="musicLink" type="text" placeholder="رابط يوتيوب أو اسم الأغنية">
                 </div>
 
+                <div class="field full">
+                  <label for="contactName">تواصلك على المنصة المختارة</label>
+                  <input id="contactName" name="contactName" type="text" placeholder="رقم واتساب أو يوزر إنستغرام أو يوزر تيك توك">
+                </div>
+
                 <div class="field full pro-vip-only hidden">
-                  <label for="sectionMessages">الرسائل المقسمة إلى سكشنات</label>
-                  <textarea id="sectionMessages" name="sectionMessages" rows="5" placeholder="مثال:\nسكشن 1: البداية...\nسكشن 2: ليش أحبك...\nسكشن 3: النهاية..."></textarea>
+                  <label for="sectionMessages">الرسائل المقسمة</label>
+                  <textarea id="sectionMessages" name="sectionMessages" rows="5" placeholder="مثال:
+سكشن 1: البداية...
+سكشن 2: ليش أحبك...
+سكشن 3: الرسالة الأخيرة..."></textarea>
                 </div>
 
                 <div class="field full pro-vip-only hidden">
                   <label for="memories">الذكريات مع التواريخ</label>
-                  <textarea id="memories" name="memories" rows="5" placeholder="مثال:\n01/05/2024 - أول لقاء\n14/08/2024 - أول هدية\n31/12/2024 - أحلى يوم سويناه"></textarea>
+                  <textarea id="memories" name="memories" rows="5" placeholder="مثال:
+01/05/2024 - أول لقاء
+14/08/2024 - أحلى يوم
+31/12/2024 - ذكرى ما أنساها"></textarea>
                 </div>
 
                 <div class="field pro-vip-only hidden">
-                  <label for="secretQuestion">كلمة السر / السؤال السري</label>
-                  <input id="secretQuestion" name="secretQuestion" type="text" placeholder="مثال: شنو أول مكان التقينا بيه؟">
+                  <label for="secretQuestion">السؤال السري</label>
+                  <input id="secretQuestion" name="secretQuestion" type="text" placeholder="مثال: وين أول مرة التقينا؟">
                 </div>
 
                 <div class="field pro-vip-only hidden">
-                  <label for="secretAnswer">الجواب</label>
+                  <label for="secretAnswer">الجواب السري</label>
                   <input id="secretAnswer" name="secretAnswer" type="text" placeholder="مثال: الجامعة">
                 </div>
 
@@ -1287,7 +1349,7 @@
                 <div class="field full vip-only hidden">
                   <label for="relationshipDate">تاريخ بداية العلاقة</label>
                   <input id="relationshipDate" name="relationshipDate" type="date">
-                  <div class="helper">يستخدم لعرض عداد: صارلنا شكد سوة.</div>
+                  <div class="helper">يُستخدم لعداد: صارلنا شكد سوة.</div>
                 </div>
 
                 <div class="field vip-only hidden">
@@ -1296,13 +1358,13 @@
                 </div>
 
                 <div class="field vip-only hidden">
-                  <label for="surpriseTitle">اسم المفاجأة</label>
+                  <label for="surpriseTitle">عنوان المفاجأة</label>
                   <input id="surpriseTitle" name="surpriseTitle" type="text" placeholder="مثال: موعدنا بعد يومين">
                 </div>
 
                 <div class="field full">
                   <label for="extraNotes">ملاحظات إضافية</label>
-                  <textarea id="extraNotes" name="extraNotes" rows="4" placeholder="أي تفاصيل إضافية تحب تضيفها"></textarea>
+                  <textarea id="extraNotes" name="extraNotes" rows="4" placeholder="أي شيء خاص تريد تضيفه"></textarea>
                 </div>
               </div>
 
@@ -1311,10 +1373,28 @@
                 <div class="feature-list" id="featureList"></div>
               </div>
 
+              <div class="feature-panel">
+                <h4>اختر وين تريد تكمل</h4>
+                <div class="channel-grid" id="channelGrid">
+                  <button type="button" class="channel-option active" data-channel="whatsapp">
+                    <strong>واتساب</strong>
+                    <span>أفضل خيار للإرسال السريع لأن الرسالة تفتح جاهزة بالكامل.</span>
+                  </button>
+                  <button type="button" class="channel-option" data-channel="instagram">
+                    <strong>إنستغرام</strong>
+                    <span>ينسخ لك نص الطلب، وبعدها يفتح حساب إنستغرام حتى تلصقه وترسله.</span>
+                  </button>
+                  <button type="button" class="channel-option" data-channel="tiktok">
+                    <strong>تيك توك</strong>
+                    <span>ينسخ لك نص الطلب، وبعدها يفتح حساب تيك توك حتى تلصقه وترسله.</span>
+                  </button>
+                </div>
+              </div>
+
               <div id="statusBox" class="status-box"></div>
 
               <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;">
-                <button type="submit" class="btn btn-primary">إرسال الطلب إلى واتساب</button>
+                <button type="submit" class="btn btn-primary" id="submitOrderBtn">الإرسال إلى واتساب</button>
                 <button type="button" class="btn btn-secondary" id="clearFormBtn">مسح البيانات</button>
               </div>
             </form>
@@ -1322,13 +1402,13 @@
 
           <div class="order-side glass">
             <h3>ملخص الباقات</h3>
-            <p>هذا الملخص يساعد الزبون يفهم بسرعة شنو يجي بكل باقة قبل لا يرسل الطلب.</p>
+            <p>هذا الملخص يساعد الزبون يفهم بسرعة شنو يجي داخل كل باقة قبل لا يرسل الطلب.</p>
 
             <div class="order-summary">
               <div class="summary-item">
                 <div>
                   <strong>Basic</strong>
-                  <small>رسالة + صور + موسيقى</small>
+                  <small>رسالة رئيسية + صور + موسيقى</small>
                 </div>
                 <div>$5</div>
               </div>
@@ -1336,7 +1416,7 @@
               <div class="summary-item">
                 <div>
                   <strong>Pro</strong>
-                  <small>سكشنات + ذكريات + كلمة سر + رسالة مخفية</small>
+                  <small>سكشنات + ذكريات + سؤال سري + رسالة مخفية</small>
                 </div>
                 <div>$7</div>
               </div>
@@ -1344,7 +1424,7 @@
               <div class="summary-item">
                 <div>
                   <strong>VIP</strong>
-                  <small>كل المميزات + عداد العلاقة + عداد المفاجأة</small>
+                  <small>كل شيء + عداد العلاقة + عداد المفاجأة</small>
                 </div>
                 <div>$10</div>
               </div>
@@ -1353,9 +1433,9 @@
             <div class="feature-panel" style="margin-top:18px;">
               <h4>ملاحظات مهمة</h4>
               <div class="feature-list">
-                <div>• كل الطلبات تنرسل مباشرة إلى واتساب بشكل مرتب.</div>
-                <div>• اكتب التفاصيل بوضوح حتى أقدر أنفذها أسرع.</div>
-                <div>• إذا تريد تصميم مختلف أو فكرة مخصصة، اكتبها بملاحظات إضافية.</div>
+                <div>• واتساب هو الأسرع لأن الطلب يفتح جاهز مباشرة.</div>
+                <div>• في إنستغرام وتيك توك، يتم نسخ الطلب كامل تلقائيًا قبل فتح الحساب.</div>
+                <div>• معاينة الصور تظهر داخل الفورم، وأسماء الصور تدخل داخل نص الطلب المرتب.</div>
               </div>
             </div>
           </div>
@@ -1368,34 +1448,34 @@
         <div class="trust-card glass">
           <div class="section-head" style="text-align:right; margin-bottom:0;">
             <h2>الأمان والثقة</h2>
-            <p>هذا القسم مهم جدًا لأن بعض الناس تخاف من الروابط. وجوده يطمّنهم ويرفع فرصة الشراء.</p>
+            <p>هذا القسم مهم لأن بعض الناس تتردد من الروابط. التوضيح الواضح يرفع الثقة ويزيد فرصة الطلب.</p>
           </div>
 
           <div class="trust-list">
-            <div class="trust-item"><div>🛡️</div><div><strong>ما يحتاج تسجيل دخول</strong>الرابط يفتح مباشرة من المتصفح بدون حسابات أو كلمات سر.</div></div>
-            <div class="trust-item"><div>🔐</div><div><strong>ما نطلب معلومات حساسة</strong>ماكو بطاقات بنكية أو تنزيلات أو صلاحيات تخوف الزائر.</div></div>
-            <div class="trust-item"><div>🌐</div><div><strong>صفحة رسمية واضحة</strong>الباقات والنماذج والتواصل الواضح يخلي المشروع يبدو احترافي ومو مجهول.</div></div>
-            <div class="trust-item"><div>⚡</div><div><strong>تجربة سريعة</strong>كلشي واضح وسهل وهذا يساعد الزبون ياخذ قرار أسرع.</div></div>
+            <div class="trust-item"><div>🛡️</div><div><strong>بدون تسجيل دخول</strong>الرابط يفتح مباشرة من المتصفح بدون حسابات أو كلمات سر.</div></div>
+            <div class="trust-item"><div>🔐</div><div><strong>بدون معلومات حساسة</strong>ماكو بطاقات بنكية أو تنزيل تطبيقات أو صلاحيات تخوف الزائر.</div></div>
+            <div class="trust-item"><div>🌐</div><div><strong>صفحة واضحة ورسمية</strong>الباقات والنموذج والتواصل المباشر يخلّون المشروع يبين احترافي ومو مجهول.</div></div>
+            <div class="trust-item"><div>⚡</div><div><strong>تجربة سهلة وسريعة</strong>كل شيء واضح ومفهوم، وهذا يساعد الزبون ياخذ قرار أسرع.</div></div>
           </div>
         </div>
 
         <div class="reviews-card glass">
           <div class="section-head" style="text-align:right; margin-bottom:0;">
-            <h2>تجارب الزبائن</h2>
-            <p>ردود فعل حقيقية على الهدايا الرقمية.</p>
+            <h2>ردود فعل الزبائن</h2>
+            <p>ردود فعل حقيقية تبيّن التأثير العاطفي لفكرة الهدية الرقمية.</p>
           </div>
           <div class="reviews-grid">
             <div class="review">
-              <p>"والله ما كنت متوقع توصل لهالدرجة. فتحتها وظلت ساكتة كم دقيقة وبعدين كالتلي هاي أحلى شي سويته إلي."</p>
-              <strong>— تجربة عميل 1</strong>
+              <p>"والله ما توقعت تحسها بهالدرجة. فتحت الهدية، سكتت دقيقة كاملة، وبعدها كالتلي إنها من أكثر الأشياء اللي أثرت بيها."</p>
+              <strong>— تجربة زبون 1</strong>
             </div>
             <div class="review">
-              <p>"دخلت على الرابط بالبداية عادي، بس من بدت تقرأ الرسالة وتسمع الأغنية تغير جوها. كالتلي منين جبت هالفكرة."</p>
-              <strong>— تجربة عميل 2</strong>
+              <p>"أحلى شيء إن الموضوع حسّيته كامل. مو مجرد رسالة، الموسيقى والصور والسكشنات خلت القصة إلها مكان خاص."</p>
+              <strong>— تجربة زبون 2</strong>
             </div>
             <div class="review">
-              <p>"جربتها من باب الفضول، بس ردّة الفعل كانت قوية صراحة. الموضوع مو مجرد موقع، يحسس بشي مختلف."</p>
-              <strong>— تجربة عميل 3</strong>
+              <p>"جربتها لأن الفكرة مختلفة، بس النتيجة كانت أقوى من المتوقع. فعلاً تحسها شخصية ومميزة."</p>
+              <strong>— تجربة زبون 3</strong>
             </div>
           </div>
         </div>
@@ -1406,14 +1486,14 @@
       <div class="container contact-layout">
         <div class="contact-card glass">
           <div class="section-head" style="text-align:right; margin-bottom:0;">
-            <h2>أماكن التواصل</h2>
-            <p>راسلني مباشرة للطلب أو الاستفسار.</p>
+            <h2>التواصل</h2>
+            <p>راسلني مباشرة إذا تريد تطلب أو تسأل عن أي شيء قبل القرار.</p>
           </div>
 
           <div class="contact-links">
             <a class="contact-link" href="https://wa.me/9647770998885" target="_blank" rel="noopener noreferrer">
               <span>واتساب</span>
-              <small>07770998885</small>
+              <small>+964 777 099 8885</small>
             </a>
             <a class="contact-link" href="https://instagram.com/luvra.iq" target="_blank" rel="noopener noreferrer">
               <span>إنستغرام</span>
@@ -1429,25 +1509,25 @@
         <div class="faq-card glass">
           <div class="section-head" style="text-align:right; margin-bottom:0;">
             <h2>الأسئلة الشائعة</h2>
-            <p>هاي تساعد الزبون يتطمن بدون ما يراسلك على كل تفصيلة صغيرة.</p>
+            <p>هذه تساعد الزبون يطمن بدون ما يراسل على كل تفصيلة صغيرة.</p>
           </div>
 
           <div class="faq">
             <details>
               <summary>هل الرابط آمن؟</summary>
-              <p>نعم، الرابط للعرض فقط ولا يحتاج تسجيل دخول أو تنزيل تطبيق أو مشاركة بيانات حساسة.</p>
+              <p>نعم. الرابط للعرض فقط وما يحتاج تسجيل دخول أو تنزيل تطبيقات أو مشاركة معلومات حساسة.</p>
             </details>
             <details>
               <summary>كم مدة التجهيز؟</summary>
-              <p>غالبًا خلال ساعات قليلة من استلام الطلب، وبحد أقصى خلال 24 ساعة حسب التفاصيل.</p>
+              <p>غالبًا خلال ساعات قليلة بعد استلام الطلب الكامل، وبحد أقصى خلال 24 ساعة حسب الباقة والتفاصيل.</p>
             </details>
             <details>
-              <summary>هل أگدر أطلب تصميم مخصص؟</summary>
-              <p>نعم، ممكن تضيف ألوان معينة أو فكرة محددة أو نوع مناسبة مختلف حسب الاتفاق.</p>
+              <summary>هل أقدر أطلب شيء مخصص؟</summary>
+              <p>نعم. تقدر تطلب ألوان معينة أو فكرة مختلفة أو مناسبة أخرى حسب الاتفاق.</p>
             </details>
             <details>
-              <summary>شلون أدفع أو أطلب؟</summary>
-              <p>الطلب يكون عبر واتساب أو إنستغرام، والدفع يكون حسب الطريقة المتفق عليها مثل كي كارد أو زين كاش.</p>
+              <summary>شلون أطلب وأدفع؟</summary>
+              <p>تكمل عبر واتساب أو إنستغرام أو تيك توك بعد استخدام الفورم الذكي، وبعدها يتم ترتيب الدفع بشكل مباشر.</p>
             </details>
           </div>
         </div>
@@ -1458,8 +1538,8 @@
       <div class="container">
         <div class="cta glass">
           <div>
-            <h3>جاهز تطلب هديتك؟</h3>
-            <p>إذا عجبتك الفكرة أو تريد هدية مخصصة، انزل إلى الطلب الذكي وخلّي كل التفاصيل تنرسل مرتبة مباشرة.</p>
+            <h3>جاهز تسوي هديتك؟</h3>
+            <p>إذا عجبتك الفكرة وتريد شيء عاطفي ومرتب ومختلف، انزل إلى الطلب الذكي وأرسل تفاصيلك بالطريقة اللي تفضلها.</p>
           </div>
           <a class="btn btn-primary" href="#order">ابدأ الطلب</a>
         </div>
@@ -1468,11 +1548,14 @@
   </main>
 
   <footer>
-    <div class="container">© 2026 Luvra — صفحة تعريفية احترافية لمشروع الهدايا الرقمية.</div>
+    <div class="container">© 2026 Luvra — هدايا رقمية عاطفية فخمة.</div>
   </footer>
 
   <script>
     const WHATSAPP_NUMBER = '9647770998885';
+    const INSTAGRAM_URL = 'https://instagram.com/luvra.iq';
+    const TIKTOK_URL = 'https://tiktok.com/@luvra.iq';
+
     const heartContainer = document.getElementById('hearts');
     const heartSymbols = ['♥', '♡', '❤'];
     for (let i = 0; i < 20; i++) {
@@ -1488,28 +1571,61 @@
 
     function copySiteLink() {
       navigator.clipboard.writeText(window.location.href).then(() => {
-        alert('تم نسخ رابط الصفحة');
+        alert('تم نسخ رابط الموقع');
       }).catch(() => {
-        alert('ما كدرت أنسخ الرابط، انسخه يدويًا');
+        alert('ما قدرت أنسخ الرابط تلقائيًا، انسخه يدويًا');
       });
     }
 
     const packageConfig = {
       basic: {
         name: 'Basic',
-        features: ['رسالة رئيسية', 'صور', 'موسيقى', 'تصميم أنيق وبسيط']
+        features: [
+          'رسالة رئيسية',
+          'صور',
+          'موسيقى',
+          'تصميم أنيق ونظيف'
+        ]
       },
       pro: {
         name: 'Pro',
-        features: ['رسالة مقسمة إلى سكشنات', 'ذكريات مع تواريخ', 'صور + موسيقى', 'كلمة سر + جواب', 'رسالة مخفية']
+        features: [
+          'رسالة مقسمة إلى سكشنات',
+          'ذكريات مع تواريخ',
+          'صور + موسيقى',
+          'سؤال سري + جواب',
+          'رسالة مخفية'
+        ]
       },
       vip: {
         name: 'VIP',
-        features: ['كل مميزات Pro', 'تايم لاين كامل', 'عداد للعلاقة', 'عداد للمفاجأة القادمة', 'تجربة أفخم ومخصصة أكثر']
+        features: [
+          'كل مميزات Pro',
+          'تايم لاين كامل',
+          'عداد للعلاقة',
+          'عداد للمفاجأة القادمة',
+          'تجربة أفخم وأكثر تخصيصًا'
+        ]
+      }
+    };
+
+    const channelConfig = {
+      whatsapp: {
+        name: 'واتساب',
+        buttonLabel: 'الإرسال إلى واتساب'
+      },
+      instagram: {
+        name: 'إنستغرام',
+        buttonLabel: 'نسخ الطلب والمتابعة إلى إنستغرام'
+      },
+      tiktok: {
+        name: 'تيك توك',
+        buttonLabel: 'نسخ الطلب والمتابعة إلى تيك توك'
       }
     };
 
     const packageButtons = document.querySelectorAll('.package-option');
+    const channelButtons = document.querySelectorAll('.channel-option');
     const packageNameInput = document.getElementById('packageName');
     const featureList = document.getElementById('featureList');
     const statusBox = document.getElementById('statusBox');
@@ -1517,6 +1633,13 @@
     const clearFormBtn = document.getElementById('clearFormBtn');
     const navWrap = document.querySelector('.nav-wrap');
     const waFloat = document.querySelector('.wa-float');
+    const submitOrderBtn = document.getElementById('submitOrderBtn');
+    const giftImagesInput = document.getElementById('giftImages');
+    const imagePreview = document.getElementById('imagePreview');
+    const imageMeta = document.getElementById('imageMeta');
+
+    let selectedChannel = 'whatsapp';
+    let selectedImageFiles = [];
 
     function setPackage(selected) {
       packageButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.package === selected));
@@ -1526,8 +1649,51 @@
       document.querySelectorAll('.vip-only').forEach(el => el.classList.toggle('hidden', selected !== 'vip'));
     }
 
+    function setChannel(channel) {
+      selectedChannel = channel;
+      channelButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.channel === channel));
+      submitOrderBtn.textContent = channelConfig[channel].buttonLabel;
+    }
+
     packageButtons.forEach(btn => btn.addEventListener('click', () => setPackage(btn.dataset.package)));
+    channelButtons.forEach(btn => btn.addEventListener('click', () => setChannel(btn.dataset.channel)));
+
     setPackage('basic');
+    setChannel('whatsapp');
+
+    giftImagesInput.addEventListener('change', function () {
+      selectedImageFiles = Array.from(this.files || []);
+      renderImagePreview();
+    });
+
+    function renderImagePreview() {
+      imagePreview.innerHTML = '';
+
+      if (!selectedImageFiles.length) {
+        imageMeta.textContent = '';
+        return;
+      }
+
+      const totalSizeMB = (
+        selectedImageFiles.reduce((sum, file) => sum + file.size, 0) / (1024 * 1024)
+      ).toFixed(2);
+
+      imageMeta.innerHTML = `
+        <span class="preview-chip">${selectedImageFiles.length} صورة مختارة</span>
+        <span class="preview-chip">الحجم الكلي: ${totalSizeMB} MB</span>
+      `;
+
+      selectedImageFiles.forEach(file => {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const box = document.createElement('div');
+          box.className = 'preview-thumb';
+          box.innerHTML = `<img src="${e.target.result}" alt="${file.name}">`;
+          imagePreview.appendChild(box);
+        };
+        reader.readAsDataURL(file);
+      });
+    }
 
     function textValue(id) {
       const el = document.getElementById(id);
@@ -1541,6 +1707,7 @@
       const mainMessage = textValue('mainMessage');
       const basicImages = textValue('basicImages');
       const musicLink = textValue('musicLink');
+      const contactName = textValue('contactName');
       const sectionMessages = textValue('sectionMessages');
       const memories = textValue('memories');
       const secretQuestion = textValue('secretQuestion');
@@ -1550,57 +1717,138 @@
       const surpriseDate = textValue('surpriseDate');
       const surpriseTitle = textValue('surpriseTitle');
       const extraNotes = textValue('extraNotes');
+      const imageNames = selectedImageFiles.map(file => file.name);
+
       const lines = [];
       lines.push('طلب جديد من موقع Luvra');
       lines.push('');
       lines.push(`الباقة: ${packageName}`);
       lines.push(`اسم المرسل: ${senderName}`);
       lines.push(`اسم المستلم: ${receiverName}`);
+      lines.push(`تواصل الزبون على المنصة المختارة: ${contactName || '-'}`);
       lines.push('');
       lines.push('الرسالة الرئيسية:');
       lines.push(mainMessage || '-');
-      if (basicImages) { lines.push(''); lines.push('الصور / وصف الصور:'); lines.push(basicImages); }
-      if (musicLink) { lines.push(''); lines.push(`الموسيقى: ${musicLink}`); }
+
+      if (basicImages) {
+        lines.push('');
+        lines.push('روابط الصور / وصف الصور:');
+        lines.push(basicImages);
+      }
+
+      if (imageNames.length) {
+        lines.push('');
+        lines.push(`الصور المرفوعة (${imageNames.length}):`);
+        imageNames.forEach((name, index) => {
+          lines.push(`${index + 1}. ${name}`);
+        });
+      }
+
+      if (musicLink) {
+        lines.push('');
+        lines.push(`الموسيقى: ${musicLink}`);
+      }
+
       if (packageName !== 'Basic') {
-        lines.push(''); lines.push('الرسائل المقسمة إلى سكشنات:'); lines.push(sectionMessages || '-');
-        lines.push(''); lines.push('الذكريات مع التواريخ:'); lines.push(memories || '-');
-        lines.push(''); lines.push(`كلمة السر / السؤال السري: ${secretQuestion || '-'}`);
-        lines.push(`الجواب: ${secretAnswer || '-'}`);
-        lines.push(''); lines.push('الرسالة المخفية:'); lines.push(hiddenMessage || '-');
+        lines.push('');
+        lines.push('الرسائل المقسمة:');
+        lines.push(sectionMessages || '-');
+
+        lines.push('');
+        lines.push('الذكريات مع التواريخ:');
+        lines.push(memories || '-');
+
+        lines.push('');
+        lines.push(`السؤال السري: ${secretQuestion || '-'}`);
+        lines.push(`الجواب السري: ${secretAnswer || '-'}`);
+
+        lines.push('');
+        lines.push('الرسالة المخفية:');
+        lines.push(hiddenMessage || '-');
       }
+
       if (packageName === 'VIP') {
-        lines.push(''); lines.push(`تاريخ بداية العلاقة: ${relationshipDate || '-'}`);
+        lines.push('');
+        lines.push(`تاريخ بداية العلاقة: ${relationshipDate || '-'}`);
         lines.push(`تاريخ ووقت المفاجأة: ${surpriseDate || '-'}`);
-        lines.push(`اسم المفاجأة: ${surpriseTitle || '-'}`);
+        lines.push(`عنوان المفاجأة: ${surpriseTitle || '-'}`);
       }
-      if (extraNotes) { lines.push(''); lines.push('ملاحظات إضافية:'); lines.push(extraNotes); }
+
+      if (extraNotes) {
+        lines.push('');
+        lines.push('ملاحظات إضافية:');
+        lines.push(extraNotes);
+      }
+
+      lines.push('');
+      lines.push(`المنصة المفضلة: ${channelConfig[selectedChannel].name}`);
+
       return lines.join('\n');
     }
 
-    form.addEventListener('submit', function (e) {
+    async function copyText(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch (err) {
+        return false;
+      }
+    }
+
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
       statusBox.className = 'status-box';
       statusBox.textContent = '';
+
       const senderName = textValue('senderName');
       const receiverName = textValue('receiverName');
       const mainMessage = textValue('mainMessage');
+
       if (!senderName || !receiverName || !mainMessage) {
         statusBox.className = 'status-box error';
-        statusBox.textContent = 'لازم تملأ اسم المرسل واسم المستلم والرسالة الرئيسية أولاً.';
+        statusBox.textContent = 'لازم تملأ اسم المرسل واسم المستلم والرسالة الرئيسية أولًا.';
         return;
       }
+
       const message = createMessage();
-      const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-      statusBox.className = 'status-box success';
-      statusBox.textContent = 'تم تجهيز الطلب. سيتم فتح واتساب الآن بالرسالة المرتبة.';
-      window.open(whatsappUrl, '_blank');
+
+      if (selectedChannel === 'whatsapp') {
+        const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+        statusBox.className = 'status-box success';
+        statusBox.textContent = 'تم تجهيز الطلب. راح ينفتح واتساب الآن والرسالة جاهزة بالكامل.';
+        window.open(whatsappUrl, '_blank');
+        return;
+      }
+
+      const copied = await copyText(message);
+
+      if (selectedChannel === 'instagram') {
+        statusBox.className = copied ? 'status-box info' : 'status-box error';
+        statusBox.textContent = copied
+          ? 'تم نسخ نص الطلب. راح ينفتح إنستغرام الآن — فقط الصق الرسالة وأرسلها.'
+          : 'راح ينفتح إنستغرام الآن. إذا ما اننسخ النص تلقائيًا، ارجع وانسخه يدويًا من الفورم.';
+        window.open(INSTAGRAM_URL, '_blank');
+        return;
+      }
+
+      if (selectedChannel === 'tiktok') {
+        statusBox.className = copied ? 'status-box info' : 'status-box error';
+        statusBox.textContent = copied
+          ? 'تم نسخ نص الطلب. راح ينفتح تيك توك الآن — فقط الصق الرسالة وأرسلها.'
+          : 'راح ينفتح تيك توك الآن. إذا ما اننسخ النص تلقائيًا، ارجع وانسخه يدويًا من الفورم.';
+        window.open(TIKTOK_URL, '_blank');
+      }
     });
 
     clearFormBtn.addEventListener('click', function () {
       form.reset();
       setPackage('basic');
+      setChannel('whatsapp');
       statusBox.className = 'status-box';
       statusBox.textContent = '';
+      selectedImageFiles = [];
+      imagePreview.innerHTML = '';
+      imageMeta.textContent = '';
     });
 
     let lastScrollY = window.scrollY;
